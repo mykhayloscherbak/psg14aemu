@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:psg14_emu-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -102,4 +103,15 @@ Text Label 4525 3015 0    50   ~ 0
 +3V
 Text Label 4525 3115 0    50   ~ 0
 GND
+$Comp
+L Isolator:LTV-847S U?
+U 1 1 5BC26E11
+P 7160 2665
+F 0 "U?" H 7160 2990 50  0000 C CNN
+F 1 "LTV-847S" H 7160 2899 50  0000 C CNN
+F 2 "Package_DIP:SMDIP-16_W9.53mm" H 7160 2365 50  0001 C CNN
+F 3 "http://www.us.liteon.com/downloads/LTV-817-827-847.PDF" H 6560 3115 50  0001 C CNN
+	1    7160 2665
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
