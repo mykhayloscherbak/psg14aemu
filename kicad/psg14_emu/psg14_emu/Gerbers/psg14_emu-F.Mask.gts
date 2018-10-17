@@ -1,12 +1,12 @@
-G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,(5.0.0)*
-G04 #@! TF.CreationDate,2018-10-17T22:36:33+03:00*
+G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,5.0.0-fee4fd1~66~ubuntu16.04.1*
+G04 #@! TF.CreationDate,2018-10-18T01:49:27+03:00*
 G04 #@! TF.ProjectId,psg14_emu,70736731345F656D752E6B696361645F,rev?*
 G04 #@! TF.SameCoordinates,Original*
 G04 #@! TF.FileFunction,Soldermask,Top*
 G04 #@! TF.FilePolarity,Negative*
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-G04 Created by KiCad (PCBNEW (5.0.0)) date 10/17/18 22:36:33*
+G04 Created by KiCad (PCBNEW 5.0.0-fee4fd1~66~ubuntu16.04.1) date Thu Oct 18 01:49:27 2018*
 %MOMM*%
 %LPD*%
 G01*
@@ -15,8 +15,8 @@ G04 APERTURE LIST*
 %ADD11R,1.900000X2.180000*%
 %ADD12R,2.800000X1.140000*%
 %ADD13R,1.650000X1.900000*%
-%ADD14C,3.400000*%
-%ADD15R,3.400000X3.400000*%
+%ADD14C,4.400000*%
+%ADD15R,4.400000X4.400000*%
 %ADD16C,2.200000*%
 %ADD17R,2.200000X2.200000*%
 %ADD18C,2.900000*%
