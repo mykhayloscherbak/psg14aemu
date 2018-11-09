@@ -14,10 +14,19 @@ Id;Designator;Quantity;Designation;Supplier and ref;
 12;R9,R13,R12,R11,R10,R8,R7,R6;8;330;RM 3666 ;100
 13;R5;1;68;RM 4573 ;100
 ;Ext;8;IRF9Z24NPBF;RM 40284 ;10
-;Ext;8;5k1;RM 13779 ;10
-;Ext;8;1N4007;RM 1574;10
+;Ext;8;10k;RM 13787 ;20
+;Ext;8;UF4007;RM 17804 ;10
+;Ext;8;BZx55-c12;RM 26387 ;10
+;Ext;8;10nf 50V;RM  2048 ;10
+;Ext;8;1uF 50V;RM 115043 ;10
 ;Ext;2;8pinm;RM 29471;2
 ;Ext;2;8minf;RM 29468;2
 ;Ext;1;6pinm;RM 29469;1
 ;Ext;1;6pinf;RM 29466;1
 ;Ext;15;Piston;RM 41708 ;40
+;Tester;1;10Led;RM 45125;1
+;Tester;1;9x220R;RM  50989 ;2
+;Tester;1;DC for pcb;RM 1710;1
+;Tester;1;DC for cable;RM 98435 ;1
+;Ext;3;Terminal Block 5mm 3;???;5
+;Ext;1;Terminal Block 5mm 4;???;2
