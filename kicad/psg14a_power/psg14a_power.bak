@@ -20,7 +20,7 @@ U 1 1 5C02A0F2
 P 2450 1430
 F 0 "Q1" H 2655 1384 50  0000 L CNN
 F 1 "IRF9Z24N" H 2655 1475 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 2650 1355 50  0001 L CIN
+F 2 "TO_SOT_Packages_THT:TO-220-3_Vertical" H 2650 1355 50  0001 L CIN
 F 3 "http://www.irf.com/product-info/datasheets/data/irf9540n.pdf" H 2450 1430 50  0001 L CNN
 	1    2450 1430
 	1    0    0    1   
@@ -138,7 +138,7 @@ F 3 "~" H 2450 1970 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2450 1830 2450 1870
-Text Label 2550 1830 0    50   ~ 0
+Text Label 2550 1630 0    50   ~ 0
 Relay_Ctl
 Wire Wire Line
 	2060 1820 2060 2070
@@ -146,7 +146,7 @@ Wire Wire Line
 	2060 2070 2450 2070
 Connection ~ 2450 2070
 Wire Wire Line
-	2450 2070 3130 2070
+	2450 2070 2550 2070
 $Comp
 L Device:C_Small C2
 U 1 1 5C0EFE1A
@@ -167,4 +167,9 @@ Text Label 2060 1820 2    50   ~ 0
 gnd
 Text Label 3130 840  0    50   ~ 0
 +24V
+Wire Wire Line
+	2550 1830 2550 2070
+Connection ~ 2550 2070
+Wire Wire Line
+	2550 2070 3130 2070
 $EndSCHEMATC
