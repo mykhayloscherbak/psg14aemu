@@ -207,4 +207,63 @@ Text Label 2880 3580 2    50   ~ 0
 Out4
 Text Label 2880 3680 2    50   ~ 0
 Out5
+$Comp
+L Device:R_Small R16
+U 1 1 5C1D8B10
+P 2740 2620
+F 0 "R16" H 2799 2666 50  0000 L CNN
+F 1 "5K1" H 2799 2575 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" H 2740 2620 50  0001 C CNN
+F 3 "~" H 2740 2620 50  0001 C CNN
+	1    2740 2620
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED_Small D16
+U 1 1 5C1D8DFC
+P 2740 2420
+F 0 "D16" V 2786 2352 50  0000 R CNN
+F 1 "green" V 2695 2352 50  0000 R CNN
+F 2 "LEDs:LED_0805_HandSoldering" V 2740 2420 50  0001 C CNN
+F 3 "~" V 2740 2420 50  0001 C CNN
+	1    2740 2420
+	0    -1   -1   0   
+$EndComp
+Text Label 2740 2320 0    50   ~ 0
++24V
+Text Label 2740 2720 2    50   ~ 0
+GND
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 5C1D9BBE
+P 2280 2910
+F 0 "H1" H 2380 2956 50  0000 L CNN
+F 1 "Mech" H 2380 2865 50  0000 L CNN
+F 2 "Mounting_Holes:MountingHole_3.2mm_M3" H 2280 2910 50  0001 C CNN
+F 3 "~" H 2280 2910 50  0001 C CNN
+	1    2280 2910
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 5C1D9C5A
+P 2560 2920
+F 0 "H2" H 2660 2966 50  0000 L CNN
+F 1 "Mech" H 2660 2875 50  0000 L CNN
+F 2 "Mounting_Holes:MountingHole_3.2mm_M3" H 2560 2920 50  0001 C CNN
+F 3 "~" H 2560 2920 50  0001 C CNN
+	1    2560 2920
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H3
+U 1 1 5C1D9CE6
+P 2850 2920
+F 0 "H3" H 2950 2966 50  0000 L CNN
+F 1 "Mech" H 2950 2875 50  0000 L CNN
+F 2 "Mounting_Holes:MountingHole_3.2mm_M3" H 2850 2920 50  0001 C CNN
+F 3 "~" H 2850 2920 50  0001 C CNN
+	1    2850 2920
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
