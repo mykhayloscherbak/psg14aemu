@@ -234,34 +234,34 @@ Text Label 2740 2320 0    50   ~ 0
 Text Label 2740 2720 2    50   ~ 0
 GND
 $Comp
-L Mechanical:MountingHole H?
+L Mechanical:MountingHole H1
 U 1 1 5C1D9BBE
 P 2280 2910
-F 0 "H?" H 2380 2956 50  0000 L CNN
+F 0 "H1" H 2380 2956 50  0000 L CNN
 F 1 "Mech" H 2380 2865 50  0000 L CNN
-F 2 "" H 2280 2910 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_3.2mm_M3" H 2280 2910 50  0001 C CNN
 F 3 "~" H 2280 2910 50  0001 C CNN
 	1    2280 2910
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H?
+L Mechanical:MountingHole H2
 U 1 1 5C1D9C5A
 P 2560 2920
-F 0 "H?" H 2660 2966 50  0000 L CNN
+F 0 "H2" H 2660 2966 50  0000 L CNN
 F 1 "Mech" H 2660 2875 50  0000 L CNN
-F 2 "" H 2560 2920 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_3.2mm_M3" H 2560 2920 50  0001 C CNN
 F 3 "~" H 2560 2920 50  0001 C CNN
 	1    2560 2920
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H?
+L Mechanical:MountingHole H3
 U 1 1 5C1D9CE6
 P 2850 2920
-F 0 "H?" H 2950 2966 50  0000 L CNN
+F 0 "H3" H 2950 2966 50  0000 L CNN
 F 1 "Mech" H 2950 2875 50  0000 L CNN
-F 2 "" H 2850 2920 50  0001 C CNN
+F 2 "Mounting_Holes:MountingHole_3.2mm_M3" H 2850 2920 50  0001 C CNN
 F 3 "~" H 2850 2920 50  0001 C CNN
 	1    2850 2920
 	1    0    0    -1  
