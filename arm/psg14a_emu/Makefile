@@ -79,6 +79,8 @@ CFLAGS += -g3
 CFLAGS += -gdwarf-2
 CFLAGS += -gstrict-dwarf
 
+CFLAGS += -DSTM32F030x6
+
 LDFLAGS := -nostdlib
 LDFLAGS += -lgcc
 LDFLAGS += -Xlinker --gc-sections
