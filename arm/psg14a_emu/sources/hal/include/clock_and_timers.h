@@ -8,7 +8,12 @@
 #ifndef SOURCES_HAL_INCLUDE_CLOCK_AND_TIMERS_H_
 #define SOURCES_HAL_INCLUDE_CLOCK_AND_TIMERS_H_
 
+#define SYSTICK_FREQ 1000
+#define CORE_FREQ 8000000
 
 void Clock_HSI_Init(void);
+void Systick_Init(void);
+void ResetTimer(uint32_t *Timer);
+uint8_t IsExpiredTimer(uint32_t *Timer, uint32_t Timeout);
 
 #endif /* SOURCES_HAL_INCLUDE_CLOCK_AND_TIMERS_H_ */

@@ -6,12 +6,12 @@
 #include <stdint.h>
 #include "clock_and_timers.h"
 
-volatile uint32_t x[3]={1,2,3};
+
 void main(void)
 {
     Clock_HSI_Init();
+    Systick_Init();
 	while(1)
 	{
-		x[1]++;
 	}
 }
