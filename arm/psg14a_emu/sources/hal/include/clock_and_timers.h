@@ -15,5 +15,6 @@ void Clock_HSI_Init(void);
 void Systick_Init(void);
 void ResetTimer(uint32_t *Timer);
 uint8_t IsExpiredTimer(uint32_t *Timer, uint32_t Timeout);
+void Reset_Main_Counter(void);
 
 #endif /* SOURCES_HAL_INCLUDE_CLOCK_AND_TIMERS_H_ */

@@ -62,3 +62,10 @@ uint8_t IsExpiredTimer(uint32_t *Timer, uint32_t Timeout)
 {
 	return Counter >= *Timer + Timeout ;
 }
+
+
+void Reset_Main_Counter(void)
+{
+	Counter = 0;
+}
+

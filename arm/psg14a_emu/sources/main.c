@@ -6,16 +6,30 @@
 #include <stdint.h>
 #include "clock_and_timers.h"
 #include "gpio.h"
+#include "bl.h"
 
 
 void main(void)
 {
-    Clock_HSI_Init();
-    Systick_Init();
-    Gpio_Init();
+	Clock_HSI_Init();
+	Systick_Init();
+	Gpio_Init();
+	uint32_t Timer;
+	ResetTimer(&Timer);
+	State_t State = STATE_IDLE;
 	while(1)
 	{
-		Gpio_Set_Pin(GPIO_LED);
-		Gpio_Reset_Pin(GPIO_LED);
+		if (IsExpiredTimer(&Timer,5000) != 0)
+		{
+			ResetTimer(&Timer);
+
+			State++;
+			if (State >= STATE_TOTAL)
+			{
+				State  = STATE_IDLE;
+			}
+			Set_State(State);
+		}
+		Blink_Led();
 	}
 }
