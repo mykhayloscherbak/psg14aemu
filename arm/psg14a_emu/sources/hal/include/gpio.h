@@ -23,9 +23,12 @@ typedef enum
 	GPIO_CH7,         /** < OUT CH7 (TBD) */
 	GPIO_LED,         /** < Led */
 	GPIO_BUTTON_START,/** < Input for start button */
-	GPIO_BITTON_COLD, /** < Input for start_without_fuel button */
+	GPIO_BUTTON_COLD, /** < Input for start_without_fuel button */
 	GPIO_TOTAL        /** < Total number of GPIOs */
 } Gpio_id_t;
 
+void Gpio_Init(void);
+void Gpio_Set_Pin(const Gpio_id_t Id);
+void Gpio_Reset_Pin(const Gpio_id_t Id);
 
 #endif /* SOURCES_HAL_INCLUDE_GPIO_H_ */
