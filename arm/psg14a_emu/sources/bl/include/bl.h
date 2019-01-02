@@ -14,7 +14,7 @@ typedef enum
 	STATE_IDLE = 0, /** < Idle state. Must not occur in real life. In idle CPU sleeps */
 	STATE_START,    /** < Starting the engine */
 	STATE_COLD,     /** < Starting without fuel */
-	STATE_TOTAL     /** < Total numner of states */
+	STATE_TOTAL     /** < Total number of states */
 } State_t;
 
 /**
