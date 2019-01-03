@@ -3,10 +3,10 @@
  * @e mikl74@yahoo.com
  * @brief Main file for psg14a_emu - project for psg14a starter-alternator control panel for GTD350 engine
  */
+#include <led_control.h>
 #include <stdint.h>
 #include "clock_and_timers.h"
 #include "gpio.h"
-#include "bl.h"
 
 
 void main(void)

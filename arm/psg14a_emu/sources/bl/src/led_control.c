@@ -1,16 +1,16 @@
 /**
- * @file bl.c
+ * @file led_control.c
  * @e mikl74@yahoo.com
  * @date 02-01-2019
  * @version 1.00
- * @brief Contains business logic
+ * @brief Contains led blinking function prototypes
  */
 
 
+#include <led_control.h>
 #include <stdint.h>
 #include "clock_and_timers.h"
 #include "gpio.h"
-#include "bl.h"
 
 typedef struct
 {

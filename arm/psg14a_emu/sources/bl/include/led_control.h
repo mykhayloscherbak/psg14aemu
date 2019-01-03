@@ -1,13 +1,13 @@
 /**
- * @file bl.h
+ * @file led_control.h
  * @e mikl74@yahoo.com
  * @date 02-01-2019
  * @version 1.00
- * @brief Contains business logic function prototypes
+ * @brief Contains led blinking function prototypes
  */
 
-#ifndef SOURCES_BL_INCLUDE_BL_H_
-#define SOURCES_BL_INCLUDE_BL_H_
+#ifndef SOURCES_BL_INCLUDE_LED_CONTROL_H_
+#define SOURCES_BL_INCLUDE_LED_CONTROL_H_
 
 typedef enum
 {
@@ -27,4 +27,4 @@ void Blink_Led(void);
  */
 void Set_State(const State_t NewState);
 
-#endif /* SOURCES_BL_INCLUDE_BL_H_ */
+#endif /* SOURCES_BL_INCLUDE_LED_CONTROL_H_ */
