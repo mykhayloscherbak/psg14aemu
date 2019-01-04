@@ -19,7 +19,7 @@ void main(void)
 	State_t State = STATE_IDLE;
 	while(1)
 	{
-		if (IsExpiredTimer(&Timer,5000) != 0)
+		if (IsExpiredTimer(&Timer,15000) != 0)
 		{
 			ResetTimer(&Timer);
 

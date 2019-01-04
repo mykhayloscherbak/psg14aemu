@@ -18,7 +18,7 @@ typedef enum
 } State_t;
 
 /**
- * @Brief processes led. Led blinks depending on state.
+ * @brief processes led. Led blinks depending on state.
  */
 void Blink_Led(void);
 /**

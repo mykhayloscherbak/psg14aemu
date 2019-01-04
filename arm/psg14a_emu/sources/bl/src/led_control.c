@@ -3,14 +3,14 @@
  * @e mikl74@yahoo.com
  * @date 02-01-2019
  * @version 1.00
- * @brief Contains led blinking function prototypes
+ * @brief Contains led blinking functions
  */
 
 
 #include <led_control.h>
 #include <stdint.h>
 #include "clock_and_timers.h"
-#include "gpio.h"
+#include "led.h"
 
 typedef struct
 {
@@ -49,7 +49,7 @@ void Blink_Led(void)
 	{
 		if (On != 0)
 		{
-			Gpio_Set_Pin(GPIO_LED);
+			Led_On();
 			if (IsExpiredTimer(&Timer,Blink_Timings[CurrState].On) != 0)
 			{
 				On = 0;
@@ -58,7 +58,7 @@ void Blink_Led(void)
 		}
 		else
 		{
-			Gpio_Reset_Pin(GPIO_LED);
+			Led_Off();
 			if (IsExpiredTimer(&Timer,Blink_Timings[CurrState].Off) != 0)
 			{
 				On = 1;
@@ -69,7 +69,7 @@ void Blink_Led(void)
 	}
 	else
 	{
-		Gpio_Reset_Pin(GPIO_LED);
+		Led_Off();
 		ResetTimer(&Timer);
 		On = 0;
 	}

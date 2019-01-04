@@ -1,5 +1,5 @@
 /**
- * @file gpio.h
+ * @file gpio.c
  * @e mikl74@yahoo.com
  * @date 02-01-2019
  * @a Mykhaylo Shcherbak

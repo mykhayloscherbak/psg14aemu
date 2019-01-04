@@ -1,0 +1,6 @@
+2019-01-04  Mykhaylo Shcherbak  <mikl74@yahoo.com>
+
+	* sources/psg14a_emu.doxyfile: Doxygen added
+	* sources/hal/include/led.h: New file.
+	* sources/bl/src/led_control.c (Blink_Led): Switched from GPIO to led functions 
+	* sources/main.c (main): debug pause changed
