@@ -11,6 +11,7 @@
 #include <stdint.h>
 #include "clock_and_timers.h"
 #include "led.h"
+#include "main_outputs.h"
 
 typedef struct
 {
@@ -25,23 +26,11 @@ static const Blink_mode_t Blink_Timings[]=
 		[STATE_COLD]  = {.On = 700, .Off = 300}
 };
 
-static State_t State = STATE_IDLE;
 
-void Set_State(const State_t NewState)
-{
-	if (NewState < STATE_TOTAL)
-	{
-		State = NewState;
-	}
-	else
-	{
-		State = STATE_IDLE;
-	}
-}
 
 void Blink_Led(void)
 {
-	const State_t CurrState = State;
+	const State_t CurrState = Get_State();
 	static uint32_t Timer = 0;
 	static uint8_t On = 0;
 

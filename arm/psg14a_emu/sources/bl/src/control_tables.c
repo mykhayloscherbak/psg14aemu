@@ -9,9 +9,9 @@
 
 #include "control_tables.h"
 
-static Channel_Step_t Cyclogram_Cold[]=
+const Channel_Step_t Cyclogram_Cold[]=
 {
 		{.Channel = CH_STARTER,.Mode = OUT_MODE_ON,.ms = 0, .On = 0,.Off = 0},
 		{.Channel = CH_STARTER,.Mode = OUT_MODE_OFF, .ms = 1000, .On = 0, .Off = 0},
-		{.Channel = CH_NO_CH}
+		{.Channel = CH_TOTAL}
 };

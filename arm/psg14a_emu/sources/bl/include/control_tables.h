@@ -10,6 +10,8 @@
 #ifndef SOURCES_BL_INCLUDE_CONTROL_TABLES_H_
 #define SOURCES_BL_INCLUDE_CONTROL_TABLES_H_
 
+#include <stdint.h>
+
 typedef enum
 {
 	CH_STARTER = 0,
@@ -20,7 +22,7 @@ typedef enum
 	CH_OUT5,
 	CH_OUT6,
 	CH_OUT7,
-	CH_NO_CH
+	CH_TOTAL
 } Control_channels_id;
 
 typedef enum
