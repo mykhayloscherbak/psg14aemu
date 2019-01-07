@@ -11,9 +11,31 @@
 #include "main_outputs.h"
 #include "control_tables.h"
 #include "clock_and_timers.h"
+#include "gpio.h"
 
 static State_t State = STATE_IDLE;
 extern Channel_Step_t Cyclogram_Cold[];
+/**
+ * Converts channel id to gpio id
+ */
+static const Gpio_id_t CH_2_Gpio[CH_TOTAL]=
+{
+		[CH_STARTER] 			= GPIO_CH0,
+		[CH_PRIMING_FUEL] 		= GPIO_CH1,
+		[CH_SPARK]				= GPIO_CH2,
+		[CH_OUT3]				= GPIO_CH3,
+		[CH_OUT4]				= GPIO_CH4,
+		[CH_OUT5]				= GPIO_CH5,
+		[CH_OUT6]				= GPIO_CH6,
+		[CH_OUT7]				= GPIO_CH7
+};
+typedef enum
+{
+	RET_STATE_OFF = 0,
+	RET_STATE_ON,
+	RET_STATE_NO_CHANGE
+} Ret_State_t;
+
 
 State_t Get_State(void)
 {
@@ -32,30 +54,36 @@ void Set_State(const State_t NewState)
 	}
 }
 
+/**
+ * @brief Returns channel state for current time
+ * @param Time_From_Start time from the start of the sequence
+ * @param Step description of the current step
+ * @return On/Off or do not change
+ */
 
-static uint8_t Get_Ch_State(uint32_t const Time_From_Start,const Channel_Step_t * const Step)
+static Ret_State_t Get_Ch_State(uint32_t const Time_From_Start,const Channel_Step_t * const Step)
 {
-	uint8_t RetVal = 0;
+	Ret_State_t RetVal = RET_STATE_NO_CHANGE;
 	uint32_t Pulsed_Time = 0;
-	if (Step->ms >= Time_From_Start)
+	if (Time_From_Start >= Step->ms)
 	{
 		switch (Step->Mode)
 		{
 		case OUT_MODE_OFF:
-			RetVal = 0;
+			RetVal = RET_STATE_OFF;
 			break;
 		case OUT_MODE_ON:
-			RetVal = 0xff;
+			RetVal = RET_STATE_ON;
 			break;
 		case OUT_MODE_PULSED:
-			Pulsed_Time = (Step->ms - Time_From_Start) % ( Step->On + Step->Off);
+			Pulsed_Time =(Time_From_Start - Step->ms) % ( Step->On + Step->Off);
 			if (Pulsed_Time >= Step->On)
 			{
-				RetVal = 0;
+				RetVal = RET_STATE_OFF;
 			}
 			else
 			{
-				RetVal = 0xff;
+				RetVal = RET_STATE_ON;
 			}
 			break;
 		}
@@ -63,37 +91,61 @@ static uint8_t Get_Ch_State(uint32_t const Time_From_Start,const Channel_Step_t 
 	return RetVal;
 }
 
-static void Outputs_State(uint32_t const Time_From_Start,uint8_t * const Outs,const Channel_Step_t * const Steps)
+static uint8_t Outputs_State(uint32_t const Time_From_Start,uint8_t * const Outs,const Channel_Step_t * const Steps)
 {
+	uint8_t RetVal = 0;
 	memset(Outs,0,CH_TOTAL * sizeof(Outs[0])); /* All inputs must be off at start */
 	if (Steps != NULL && Outs != NULL)
 	{
+
 		uint8_t Counter = 0;
 		while (Steps[Counter].Channel < CH_TOTAL)
 		{
+			const Ret_State_t State = Get_Ch_State(Time_From_Start,&Steps[Counter]);
+			switch (State)
+			{
+			case RET_STATE_OFF:	Outs[Steps[Counter].Channel] = 0; break;
+			case RET_STATE_ON:	Outs[Steps[Counter].Channel] = 0xFF; break;
+			default: break;
+
+			}
 			Counter++;
 		}
-		while (--Counter > 0)
+		if (Time_From_Start >= Steps[Counter].ms)
 		{
-			Outs[Steps[Counter].Channel] = Get_Ch_State(Time_From_Start,&Steps[Counter]);
+			RetVal = 0xFF;
 		}
 	}
+	return RetVal;
 }
 
-void Control_Outs(const uint8_t FirstTime)
+uint8_t Control_Outs(const uint8_t FirstTime)
 {
 	static uint32_t Timer;
-	static uint8_t OutsOld[CH_TOTAL];
 	if (FirstTime != 0 )
 	{
 		ResetTimer(&Timer);
-		memset(OutsOld,0,sizeof(OutsOld));
 	}
 	uint8_t Outs[CH_TOTAL];
-	Outputs_State(ReadTimer(&Timer), Outs, Cyclogram_Cold);
-	if (memcmp(Outs,OutsOld,CH_TOTAL) != 0)
+	const uint8_t RetVal = Outputs_State(ReadTimer(&Timer), Outs, Cyclogram_Cold);
+	for (Control_channels_id Channel = 0; Channel < CH_TOTAL; Channel++)
 	{
-		memcpy(OutsOld,Outs,CH_TOTAL);
-		__asm__("bkpt #0");
+		const Gpio_id_t Gpio = CH_2_Gpio[Channel];
+		if (RetVal != 0)
+		{
+			if (Outs[Channel] != 0)
+			{
+				Gpio_Set_Pin(Gpio);
+			}
+			else
+			{
+				Gpio_Reset_Pin(Gpio);
+			}
+		}
+		else
+		{
+			Gpio_Reset_Pin(Gpio);
+		}
 	}
+	return RetVal;
 }

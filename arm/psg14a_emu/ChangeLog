@@ -1,3 +1,7 @@
+2019-01-07  Mykhaylo Shcherbak  <mikl74@yahoo.com>
+
+	* sources/bl/include/main_outputs.h: Prototypes added
+	* sources/bl/src/main_outputs.c (Get_State): moved  from led_control 
 2019-01-04  Mykhaylo Shcherbak  <mikl74@yahoo.com>
 
 	* sources/psg14a_emu.doxyfile: Doxygen added

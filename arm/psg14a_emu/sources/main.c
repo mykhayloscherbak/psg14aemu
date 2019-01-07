@@ -38,7 +38,10 @@ void main(void)
 			Set_State(State);
 		}
 		Blink_Led();
-		Control_Outs(0);
+		if (Control_Outs(0) != 0)
+		{
+			__asm__("bkpt #0");
+		}
 		CallBack_Occured = 0;
 		while (CallBack_Occured == 0)
 		{

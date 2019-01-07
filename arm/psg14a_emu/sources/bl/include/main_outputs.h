@@ -33,7 +33,8 @@ void Set_State(const State_t NewState);
 /**
  * @brief Controls outputs for the current time
  * @param FirstTime This is first run of the function if nonzero
+ * @return non-zero  if all sequence is over
  */
-void Control_Outs(const uint8_t FirstTime);
+uint8_t Control_Outs(const uint8_t FirstTime);
 
 #endif /* SOURCES_BL_INCLUDE_MAIN_OUTPUTS_H_ */
