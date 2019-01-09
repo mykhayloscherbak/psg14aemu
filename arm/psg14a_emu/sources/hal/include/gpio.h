@@ -27,7 +27,16 @@ typedef enum
 	GPIO_TOTAL        /**  Total number of GPIOs */
 } Gpio_id_t;
 
-void Gpio_Init(void);
+typedef enum
+{
+	BUTTON_0 = 0,
+	BUTTON_1
+
+} Buttons_t;
+
+typedef void (*Buttons_Callback_t)(const Buttons_t Button);
+
+void Gpio_Init(const Buttons_Callback_t CallBack);
 void Gpio_Set_Pin(const Gpio_id_t Id);
 void Gpio_Reset_Pin(const Gpio_id_t Id);
 

@@ -1,3 +1,10 @@
+2019-01-09  Mykhaylo Shcherbak  <mikl74@yahoo.com>
+
+	* sources/hal/include/gpio.h: Added callback for exti
+	* sources/hal/src/gpio.c (Gpio_Init): Added callback for exti
+	* sources/main.c (main): Logic changed
+	(Exti_Init): Exti added 
+
 2019-01-07  Mykhaylo Shcherbak  <mikl74@yahoo.com>
 
 	* sources/bl/include/main_outputs.h: Prototypes added

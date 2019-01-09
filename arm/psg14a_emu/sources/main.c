@@ -15,32 +15,47 @@ static void CallBack(void)
 	CallBack_Occured = !0;
 }
 
+static volatile State_t State = STATE_IDLE;
+
+static void Button_CallBack(const Buttons_t Button)
+{
+	switch(Button)
+	{
+	case BUTTON_0:
+		State = STATE_COLD;
+		break;
+	case BUTTON_1:
+		State = STATE_START;
+		break;
+	default:
+		State = STATE_IDLE;
+		break;
+	}
+}
+
 void main(void)
 {
 	Clock_HSI_Init();
 	Systick_Init(CallBack);
-	Gpio_Init();
-	uint32_t Timer;
-	ResetTimer(&Timer);
-	State_t State = STATE_IDLE;
-	Control_Outs(!0);
+	Gpio_Init(Button_CallBack);
 	while(1)
 	{
-		if (IsExpiredTimer(&Timer,15000) != 0)
+		State_t New_State = State;
+		static State_t Old_State = STATE_IDLE;
+		if (Old_State != New_State)
 		{
-			ResetTimer(&Timer);
-
-			State++;
-			if (State >= STATE_TOTAL)
+			if (New_State != STATE_IDLE)
 			{
-				State  = STATE_IDLE;
+				Control_Outs(!0);
 			}
-			Set_State(State);
+			Set_State(New_State);
+			Old_State = New_State;
 		}
+
 		Blink_Led();
 		if (Control_Outs(0) != 0)
 		{
-			__asm__("bkpt #0");
+			State = STATE_IDLE;
 		}
 		CallBack_Occured = 0;
 		while (CallBack_Occured == 0)
