@@ -1,4 +1,4 @@
-# tech02_3 application build recipe
+# Based on tech02_3 application build recipe
 #
 # Copyright Oleksiy Mikoyan 2018.
 # Distributed under the Boost Software License, Version 1.0.
