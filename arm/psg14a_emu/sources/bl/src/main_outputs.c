@@ -6,15 +6,16 @@
  * @brief Contains functions for controlling main outputs
  */
 
-#include <stdio.h>
 #include <string.h>
+#include <stdint.h>
+#include "gpio_exti.h"
 #include "main_outputs.h"
 #include "control_tables.h"
 #include "clock_and_timers.h"
-#include "gpio.h"
 
 static State_t State = STATE_IDLE;
 extern Channel_Step_t Cyclogram_Cold[];
+extern Channel_Step_t Cyclogram_Start[];
 /**
  * Converts channel id to gpio id
  */
@@ -122,29 +123,47 @@ static uint8_t Outputs_State(uint32_t const Time_From_Start,uint8_t * const Outs
 uint8_t Control_Outs(const uint8_t FirstTime)
 {
 	static uint32_t Timer;
+	static const Channel_Step_t * Step_Table = NULL;
 	if (FirstTime != 0 )
 	{
 		ResetTimer(&Timer);
-	}
-	uint8_t Outs[CH_TOTAL];
-	const uint8_t RetVal = Outputs_State(ReadTimer(&Timer), Outs, Cyclogram_Cold);
-	for (Control_channels_id Channel = 0; Channel < CH_TOTAL; Channel++)
-	{
-		const Gpio_id_t Gpio = CH_2_Gpio[Channel];
-		if (RetVal != 0)
+		const State_t CurrState = Get_State();
+		switch (CurrState)
 		{
-			if (Outs[Channel] != 0)
+		case STATE_START:
+			Step_Table = Cyclogram_Start;
+			break;
+		case STATE_COLD:
+			Step_Table = Cyclogram_Cold;
+			break;
+		default:
+			Step_Table = NULL;
+			break;
+		}
+	}
+	uint8_t RetVal = 0xFF;
+	if (Step_Table != NULL)
+	{
+		uint8_t Outs[CH_TOTAL];
+		RetVal = Outputs_State(ReadTimer(&Timer), Outs, Step_Table);
+		for (Control_channels_id Channel = 0; Channel < CH_TOTAL; Channel++)
+		{
+			const Gpio_id_t Gpio = CH_2_Gpio[Channel];
+			if (RetVal != 0)
 			{
-				Gpio_Set_Pin(Gpio);
+				if (Outs[Channel] != 0)
+				{
+					Gpio_Set_Pin(Gpio);
+				}
+				else
+				{
+					Gpio_Reset_Pin(Gpio);
+				}
 			}
 			else
 			{
 				Gpio_Reset_Pin(Gpio);
 			}
-		}
-		else
-		{
-			Gpio_Reset_Pin(Gpio);
 		}
 	}
 	return RetVal;

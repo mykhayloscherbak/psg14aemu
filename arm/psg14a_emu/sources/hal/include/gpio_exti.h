@@ -1,15 +1,14 @@
 /**
- * @file gpio.h
+ * @file gpio_exti.h
  * @e mikl74@yahoo.com
  * @a Mykhaylo Shcherbak
- * @date 01-01-2019
- * @version 1.00
- * @brief Contains GPIO hardware abstraction layer prototypes.
- * Buttons processing TBD
+ * @date 11-01-2019
+ * @version 2.00
+ * @brief Contains GPIO and EXTI hardware abstraction layer prototypes.
  */
 
-#ifndef SOURCES_HAL_INCLUDE_GPIO_H_
-#define SOURCES_HAL_INCLUDE_GPIO_H_
+#ifndef SOURCES_HAL_INCLUDE_GPIO_EXTI_H_
+#define SOURCES_HAL_INCLUDE_GPIO_EXTI_H_
 
 typedef enum
 {
@@ -39,5 +38,7 @@ typedef void (*Buttons_Callback_t)(const Buttons_t Button);
 void Gpio_Init(const Buttons_Callback_t CallBack);
 void Gpio_Set_Pin(const Gpio_id_t Id);
 void Gpio_Reset_Pin(const Gpio_id_t Id);
+void Gpio_Reset_all_Outs(void);
+void Exti_Clear_Pending(void);
 
-#endif /* SOURCES_HAL_INCLUDE_GPIO_H_ */
+#endif /* SOURCES_HAL_INCLUDE_GPIO_EXTI_H_ */

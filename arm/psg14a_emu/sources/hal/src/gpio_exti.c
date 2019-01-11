@@ -1,14 +1,14 @@
 /**
- * @file gpio.c
+ * @file gpio_exti.c
  * @e mikl74@yahoo.com
- * @date 02-01-2019
+ * @date 11-01-2019
  * @a Mykhaylo Shcherbak
- * @version 1.00
- * @brief Contains GPIO HAL functions
- * Wake-up from buttons TBD
+ * @version 2.00
+ * @brief Contains GPIO and EXTI HAL functions
+ *
  */
+#include <gpio_exti.h>
 #include "stm32f0xx.h"
-#include "gpio.h"
 #include <stdint.h>
 #include <stddef.h>
 
@@ -74,9 +74,14 @@ static void Exti_Init(void)
 {
 	/* PA9 and PA10 are exti events for starting sequence. We need event + interrupt */
 	EXTI->IMR |= (1u << B0_Pin) | (1u << B1_Pin); /* Interrupt mask RM 11.3 */
-	EXTI->EMR |= (1u << B0_Pin) | (1u << B1_Pin); /* Event mask RM 11.3 */
+//	EXTI->EMR |= (1u << B0_Pin) | (1u << B1_Pin); /* Event mask RM 11.3 */
 	EXTI->RTSR &= ~((1u << B0_Pin) | (1u << B1_Pin)); /* No rising edge */
 	EXTI->FTSR |= (1u << B0_Pin) | (1u << B1_Pin); /* Falling edge */
+}
+
+void Exti_Clear_Pending(void)
+{
+	EXTI->PR |= (1u << B0_Pin) | (1u << B1_Pin);
 }
 
 void Gpio_Init(const Buttons_Callback_t Buttons_CallBack)
@@ -129,6 +134,17 @@ void Gpio_Reset_Pin(const Gpio_id_t Id)
 			GPIO_TypeDef * const port = Gpio->port;
 			const uint8_t pin = Gpio->Pin;
 			port->BSRR = 1u << (pin + 16);
+		}
+	}
+}
+
+void Gpio_Reset_all_Outs(void)
+{
+	for (Gpio_id_t id = 0; id < GPIO_TOTAL; id++)
+	{
+		if (GPIO_MODE_OUT == Gpios[id].Mode)
+		{
+			Gpio_Reset_Pin(id);
 		}
 	}
 }

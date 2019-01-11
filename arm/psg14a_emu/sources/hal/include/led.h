@@ -8,7 +8,7 @@
  * @brief contains functions to turn LED on and off
  */
 
-#include "gpio.h"
+#include <gpio_exti.h>
 
 static inline void Led_On(void)
 {

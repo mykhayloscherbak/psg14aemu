@@ -1,3 +1,18 @@
+2019-01-11  Mykhaylo Shcherbak  <mikl74@yahoo.com>
+
+	* sources/hal/include/gpio.h: Removed.
+	* sources/hal/src/gpio.c: Removed.
+	* sources/hal/include/gpio_exti.h: Was gpio.h
+	* sources/hal/include/sleep.h: New file. Functions for going to sleep mode prototypes
+	* sources/hal/src/gpio_exti.c: Was gpio.c
+	* sources/hal/src/sleep.c: New file. Functions for going to sleep mode
+	* sources/bl/src/control_tables.c: 
+	* sources/bl/src/main_outputs.c (Control_Outs): added table switching 
+	* sources/hal/include/led.h (Led_On): gpio changed
+	* sources/main.c (CallBack): preventing for changing state while in process added
+	(Button_CallBack): cosmetics
+	(main): sleeping added.
+	
 2019-01-09  Mykhaylo Shcherbak  <mikl74@yahoo.com>
 
 	* sources/hal/include/gpio.h: Added callback for exti

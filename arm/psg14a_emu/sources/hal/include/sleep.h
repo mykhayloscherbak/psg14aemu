@@ -1,0 +1,6 @@
+#ifndef SOURCES_HAL_INCLUDE_SLEEP_H_
+#define SOURCES_HAL_INCLUDE_SLEEP_H_
+
+void Sleep_on(void);
+
+#endif /* SOURCES_HAL_INCLUDE_SLEEP_H_ */
