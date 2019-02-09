@@ -47,10 +47,10 @@ void main(void)
 	Gpio_Init(Button_CallBack);
 	while(1)
 	{
-		if (STATE_IDLE == State)
-		{
-			Sleep_on();
-		}
+//		if (STATE_IDLE == State)
+//		{
+//			Sleep_on();
+//		}
 		State_t New_State = State;
 		static State_t Old_State = STATE_IDLE;
 		if (Old_State != New_State)
