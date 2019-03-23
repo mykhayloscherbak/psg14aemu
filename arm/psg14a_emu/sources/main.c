@@ -55,18 +55,21 @@ void main(void)
 		static State_t Old_State = STATE_IDLE;
 		if (Old_State != New_State)
 		{
+			Set_State(New_State);
 			if (New_State != STATE_IDLE)
 			{
 				Control_Outs(!0);
 			}
-			Set_State(New_State);
 			Old_State = New_State;
 		}
 
 		Blink_Led();
-		if (Control_Outs(0) != 0)
+		if (State != STATE_IDLE)
 		{
-			State = STATE_IDLE;
+			if (Control_Outs(0) != 0)
+			{
+				State = STATE_IDLE;
+			}
 		}
 		Systick_CallBack_Occured = 0;
 		while (Systick_CallBack_Occured == 0)

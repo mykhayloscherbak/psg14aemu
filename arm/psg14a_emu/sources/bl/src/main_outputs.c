@@ -149,7 +149,7 @@ uint8_t Control_Outs(const uint8_t FirstTime)
 		for (Control_channels_id Channel = 0; Channel < CH_TOTAL; Channel++)
 		{
 			const Gpio_id_t Gpio = CH_2_Gpio[Channel];
-			if (RetVal != 0)
+			if (RetVal == 0)
 			{
 				if (Outs[Channel] != 0)
 				{
