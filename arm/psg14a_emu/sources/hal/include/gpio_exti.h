@@ -10,6 +10,8 @@
 #ifndef SOURCES_HAL_INCLUDE_GPIO_EXTI_H_
 #define SOURCES_HAL_INCLUDE_GPIO_EXTI_H_
 
+#include <stdint.h>
+
 typedef enum
 {
 	GPIO_CH0 = 0,     /**  OUT CH0 (Starter) */
@@ -28,17 +30,17 @@ typedef enum
 
 typedef enum
 {
-	BUTTON_0 = 0,
-	BUTTON_1
-
+	BUTTON_NONE = 0,
+	BUTTON_START,
+	BUTTON_COLD
 } Buttons_t;
 
-typedef void (*Buttons_Callback_t)(const Buttons_t Button);
 
-void Gpio_Init(const Buttons_Callback_t CallBack);
+void Gpio_Init(void);
 void Gpio_Set_Pin(const Gpio_id_t Id);
 void Gpio_Reset_Pin(const Gpio_id_t Id);
 void Gpio_Reset_all_Outs(void);
 void Exti_Clear_Pending(void);
+uint8_t Gpio_Get_Pin(const Gpio_id_t Id);
 
 #endif /* SOURCES_HAL_INCLUDE_GPIO_EXTI_H_ */

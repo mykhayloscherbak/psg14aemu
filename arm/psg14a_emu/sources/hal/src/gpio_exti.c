@@ -7,7 +7,7 @@
  * @brief Contains GPIO and EXTI HAL functions
  *
  */
-#include <gpio_exti.h>
+#include "gpio_exti.h"
 #include "stm32f0xx.h"
 #include <stdint.h>
 #include <stddef.h>
@@ -30,7 +30,6 @@ typedef struct
 
 static const uint8_t B0_Pin = 9;
 static const uint8_t B1_Pin = 10;
-static volatile Buttons_Callback_t Buttons_CallBack_Stored = NULL;
 
 
 static const Gpio_Hal_t Gpios[GPIO_TOTAL]=
@@ -47,44 +46,44 @@ static const Gpio_Hal_t Gpios[GPIO_TOTAL]=
 		[GPIO_BUTTON_START] = 	{.port = GPIOA,.Pin = 9	,	.Mode = GPIO_MODE_IN },
 		[GPIO_BUTTON_COLD] 	= 	{.port = GPIOA,.Pin = 10,	.Mode = GPIO_MODE_IN }
 };
+//
+//void EXTI4_15_IRQHandler(void);
+//
+//void EXTI4_15_IRQHandler(void)
+//{
+//	if ((EXTI->PR & ( 1u << B0_Pin)) != 0)
+//	{
+//		if (Buttons_CallBack_Stored != NULL)
+//		{
+//			(*Buttons_CallBack_Stored)(BUTTON_0);
+//			EXTI->PR = (1u << B0_Pin);
+//		}
+//	}
+//	if ((EXTI->PR & ( 1u << B1_Pin)) != 0)
+//	{
+//		if (Buttons_CallBack_Stored != NULL)
+//		{
+//			(*Buttons_CallBack_Stored)(BUTTON_1);
+//			EXTI->PR = (1u << B1_Pin);
+//		}
+//	}
+//}
 
-void EXTI4_15_IRQHandler(void);
-
-void EXTI4_15_IRQHandler(void)
-{
-	if ((EXTI->PR & ( 1u << B0_Pin)) != 0)
-	{
-		if (Buttons_CallBack_Stored != NULL)
-		{
-			(*Buttons_CallBack_Stored)(BUTTON_0);
-			EXTI->PR |= (1u << B0_Pin);
-		}
-	}
-	if ((EXTI->PR & ( 1u << B1_Pin)) != 0)
-	{
-		if (Buttons_CallBack_Stored != NULL)
-		{
-			(*Buttons_CallBack_Stored)(BUTTON_1);
-			EXTI->PR |= (1u << B1_Pin);
-		}
-	}
-
-}
 static void Exti_Init(void)
 {
 	/* PA9 and PA10 are exti events for starting sequence. We need event + interrupt */
-	EXTI->IMR |= (1u << B0_Pin) | (1u << B1_Pin); /* Interrupt mask RM 11.3 */
-//	EXTI->EMR |= (1u << B0_Pin) | (1u << B1_Pin); /* Event mask RM 11.3 */
+//	EXTI->IMR |= (1u << B0_Pin) | (1u << B1_Pin); /* Interrupt mask RM 11.3 */
+	EXTI->EMR |= (1u << B0_Pin) | (1u << B1_Pin); /* Event mask RM 11.3 */
 	EXTI->RTSR &= ~((1u << B0_Pin) | (1u << B1_Pin)); /* No rising edge */
 	EXTI->FTSR |= (1u << B0_Pin) | (1u << B1_Pin); /* Falling edge */
 }
 
 void Exti_Clear_Pending(void)
 {
-	EXTI->PR |= (1u << B0_Pin) | (1u << B1_Pin);
+	EXTI->PR = (1u << B0_Pin) | (1u << B1_Pin);
 }
 
-void Gpio_Init(const Buttons_Callback_t Buttons_CallBack)
+void Gpio_Init(void)
 {
 	RCC->AHBENR |= RCC_AHBENR_GPIOAEN | RCC_AHBENR_GPIOBEN;
 	for (Gpio_id_t id = 0; id < GPIO_TOTAL; id++)
@@ -106,8 +105,6 @@ void Gpio_Init(const Buttons_Callback_t Buttons_CallBack)
 		}
 	}
 	Exti_Init();
-	Buttons_CallBack_Stored = Buttons_CallBack;
-	NVIC_EnableIRQ(EXTI4_15_IRQn);
 }
 
 void Gpio_Set_Pin(const Gpio_id_t Id)
@@ -147,4 +144,20 @@ void Gpio_Reset_all_Outs(void)
 			Gpio_Reset_Pin(id);
 		}
 	}
+}
+
+uint8_t Gpio_Get_Pin(const Gpio_id_t Id)
+{
+	uint8_t retVal = 0;
+	if (Id < GPIO_TOTAL)
+	{
+		const Gpio_Hal_t * const Gpio = &Gpios[Id];
+		if (GPIO_MODE_IN == Gpio->Mode)
+		{
+			GPIO_TypeDef * const port = Gpio->port;
+			const uint8_t pin = Gpio->Pin;
+			retVal = (port->IDR & (1u << pin)) != 0;
+		}
+	}
+	return retVal;
 }
