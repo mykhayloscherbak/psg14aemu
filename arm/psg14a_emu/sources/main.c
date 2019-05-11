@@ -10,6 +10,7 @@
 #include "main_outputs.h"
 #include "sleep.h"
 #include "buttons.h"
+#include "stm32f0xx.h"
 
 static volatile uint8_t Systick_CallBack_Occured = 0;
 static void CallBack(void)
@@ -55,12 +56,16 @@ void main(void)
 		{
 
 		}
-//		if (STATE_IDLE == Working_State)
-//		{
-//			Sleep_on();
-//			Buttons_Reset();
-//			Exti_Clear_Pending();
-//		}
+		if (STATE_IDLE == Working_State)
+		{
+			while(Buttons_Get_State() == STATE_IDLE)
+			{
+				Exti_Clear_Pending();
+				__DSB();
+				__WFE();
+				Exti_Clear_Pending();
+			}
+		}
 
 	}
 }
