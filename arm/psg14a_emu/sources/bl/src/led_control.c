@@ -22,8 +22,8 @@ typedef struct
 static const Blink_mode_t Blink_Timings[]=
 {
 		[STATE_IDLE] = 	{.On = 0,.Off = 0},
-		[STATE_START] = {.On = 300, .Off = 700},
-		[STATE_COLD]  = {.On = 700, .Off = 300}
+		[STATE_START] = {.On = 150, .Off = 150},
+		[STATE_COLD]  = {.On = 300, .Off = 700}
 };
 
 

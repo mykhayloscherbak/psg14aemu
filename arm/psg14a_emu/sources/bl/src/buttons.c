@@ -6,7 +6,6 @@
  * @brief Contains functions to check the button state in non-blocking mode
  */
 
-#define TIMEOUT_MS 500
 
 #include <stdint.h>
 #include "clock_and_timers.h"
@@ -59,7 +58,7 @@ State_t Buttons_Get_State(void)
 		Button_State.Button = pressedButton;
 		ResetTimer(&Button_State.Timer);
 	}
-	if (BUTTON_NONE != Button_State.Button && IsExpiredTimer(&Button_State.Timer,TIMEOUT_MS))
+	if (BUTTON_NONE != Button_State.Button && IsExpiredTimer(&Button_State.Timer,BUTTON_WAIT_MS))
 	{
 		if (BUTTON_COLD == Button_State.Button)
 		{

@@ -12,26 +12,23 @@
 
 const Channel_Step_t Cyclogram_Cold[]=
 {
-		{.Channel = CH_STARTER,.Mode = OUT_MODE_ON,.ms = 0, .On = 0,.Off = 0},
-		{.Channel = CH_STARTER,.Mode = OUT_MODE_OFF, .ms = 1000, .On = 0, .Off = 0},
-		{.Channel = CH_STARTER,.Mode = OUT_MODE_PULSED, .ms = 1500, .On = 500,.Off = 1000},
-		{.Channel = CH_PRIMING_FUEL, .Mode = OUT_MODE_PULSED, .ms = 2000, .On = 500, .Off = 100},
-		{.Channel = CH_SPARK,		 .Mode = OUT_MODE_ON, 	  .ms = 2000, .On = 0,   .Off = 0},
-		{.Channel = CH_OUT3,		 .Mode = OUT_MODE_ON, 	  .ms = 2500, .On = 0,   .Off = 0},
-		{.Channel = CH_OUT4,		 .Mode = OUT_MODE_ON, 	  .ms = 3000, .On = 0,   .Off = 0},
-		{.Channel = CH_PRIMING_FUEL, .Mode = OUT_MODE_OFF, .ms = 9000, .On = 0, .Off = 0},
-		{.Channel = CH_STARTER,.Mode = OUT_MODE_OFF, .ms = 9000, .On = 0, .Off = 0},
-		{.Channel = CH_SPARK,  .Mode = OUT_MODE_OFF, .ms = 9000, .On = 0, .Off = 0},
-		{.Channel = CH_OUT3,   .Mode = OUT_MODE_OFF, .ms = 9000, .On = 0, .Off = 0},
-		{.Channel = CH_OUT4,   .Mode = OUT_MODE_OFF, .ms = 9500, .On = 0, .Off = 0},
-		{.Channel = CH_TOTAL, .ms = 10000}
+		{.Channel = CH_STARTER,			.Mode = OUT_MODE_ON,		.ms = 	  0, 	.On = 0,	.Off = 0	},
+		{.Channel = CH_SHUNT,			.Mode = OUT_MODE_ON,		.ms =  5000,	.On = 0,	.Off = 0	},
+		{.Channel = CH_STARTER, 		.Mode = OUT_MODE_OFF,		.ms = 25000,	.On = 0,	.Off = 0	},
+		{.Channel = CH_SHUNT,   		.Mode = OUT_MODE_OFF,		.ms = 25000,	.On = 0,	.Off = 0	},
+		{.Channel = CH_TOTAL, .ms = 25100}
 };
 
 const Channel_Step_t Cyclogram_Start[]=
 {
-		{.Channel = CH_STARTER,.Mode = OUT_MODE_ON,.ms = 0, .On = 0,.Off = 0},
-		{.Channel = CH_STARTER,.Mode = OUT_MODE_OFF, .ms = 5000, .On = 0, .Off = 0},
-		{.Channel = CH_PRIMING_FUEL, .Mode = OUT_MODE_PULSED, .ms = 2000, .On = 500, .Off = 100},
-		{.Channel = CH_PRIMING_FUEL, .Mode = OUT_MODE_OFF, .ms = 9000, .On = 0, .Off = 0},
-		{.Channel = CH_TOTAL, .ms = 15000}
+		{.Channel = CH_STARTER,			.Mode = OUT_MODE_ON,		.ms = 	  0, 	.On = 0,	.Off = 0	},
+		{.Channel = CH_PRIMING_FUEL,	.Mode = OUT_MODE_PULSED,	.ms =  2000, 	.On = 800,	.Off = 800	},
+		{.Channel = CH_SPARK,			.Mode = OUT_MODE_ON,		.ms =  2000, 	.On = 	0,	.Off = 	 0	},
+		{.Channel = CH_SHUNT,			.Mode = OUT_MODE_ON,		.ms =  5000,	.On =   0,	.Off =   0	},
+		{.Channel = CH_SHUNT,			.Mode = OUT_MODE_OFF,		.ms = 28000,	.On =   0,	.Off =   0	},
+		{.Channel = CH_STARTER,			.Mode = OUT_MODE_OFF,		.ms = 28000,	.On =   0,	.Off =   0	},
+		{.Channel = CH_PRIMING_FUEL,	.Mode = OUT_MODE_OFF,		.ms = 30000,	.On =   0,	.Off =   0	},
+		{.Channel = CH_SPARK,			.Mode = OUT_MODE_OFF,		.ms = 30000,	.On =   0,	.Off =   0	},
+		{.Channel = CH_TOTAL, .ms = 30100}
+
 };

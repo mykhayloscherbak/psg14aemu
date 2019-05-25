@@ -6,6 +6,8 @@
  * @brief Contains functions prototypes to check the button state in non-blocking mode
  */
 
+#define BUTTON_WAIT_MS 500
+
 #include "main_outputs.h"
 void Buttons_Reset(void);
 State_t Buttons_Get_State(void);

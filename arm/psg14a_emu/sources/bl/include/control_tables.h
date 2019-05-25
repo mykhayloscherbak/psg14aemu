@@ -17,7 +17,7 @@ typedef enum
 	CH_STARTER = 0,
 	CH_PRIMING_FUEL,
 	CH_SPARK,
-	CH_OUT3,
+	CH_SHUNT,
 	CH_OUT4,
 	CH_OUT5,
 	CH_OUT6,

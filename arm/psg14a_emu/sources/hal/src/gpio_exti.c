@@ -43,29 +43,29 @@ static const Gpio_Hal_t Gpios[GPIO_TOTAL]=
 		[GPIO_CH6] = 			{.port = GPIOA,.Pin = 6	,	.Mode = GPIO_MODE_OUT},
 		[GPIO_CH7] = 			{.port = GPIOA,.Pin = 7	,	.Mode = GPIO_MODE_OUT},
 		[GPIO_LED] = 			{.port = GPIOB,.Pin = 1	,	.Mode = GPIO_MODE_OUT},
-		[GPIO_BUTTON_START] = 	{.port = GPIOA,.Pin = 9	,	.Mode = GPIO_MODE_IN },
-		[GPIO_BUTTON_COLD] 	= 	{.port = GPIOA,.Pin = 10,	.Mode = GPIO_MODE_IN }
+		[GPIO_BUTTON_COLD] = 	{.port = GPIOA,.Pin = 9	,	.Mode = GPIO_MODE_IN },
+		[GPIO_BUTTON_START]	= 	{.port = GPIOA,.Pin = 10,	.Mode = GPIO_MODE_IN }
 };
 
-//void EXTI4_15_IRQHandler(void);
-//
-//void EXTI4_15_IRQHandler(void)
-//{
-//	if ((EXTI->PR & ( 1u << B0_Pin)) != 0)
-//	{
-//		EXTI->PR = (1u << B0_Pin);
-//	}
-//	if ((EXTI->PR & ( 1u << B1_Pin)) != 0)
-//	{
-//		EXTI->PR = (1u << B1_Pin);
-//	}
-//}
+void EXTI4_15_IRQHandler(void);
+
+void EXTI4_15_IRQHandler(void)
+{
+	if ((EXTI->PR & ( 1u << B0_Pin)) != 0)
+	{
+		EXTI->PR = (1u << B0_Pin);
+	}
+	if ((EXTI->PR & ( 1u << B1_Pin)) != 0)
+	{
+		EXTI->PR = (1u << B1_Pin);
+	}
+}
 
 static void Exti_Init(void)
 {
 	/* PA9 and PA10 are exti events for starting sequence. We need event + interrupt */
-//    EXTI->IMR |= (1u << B0_Pin) | (1u << B1_Pin); /* Interrupt mask RM 11.3 */
-	EXTI->EMR |= (1u << B0_Pin) | (1u << B1_Pin); /* Event mask RM 11.3 */
+    EXTI->IMR |= (1u << B0_Pin) | (1u << B1_Pin); /* Interrupt mask RM 11.3 */
+//	EXTI->EMR |= (1u << B0_Pin) | (1u << B1_Pin); /* Event mask RM 11.3 */
 	EXTI->RTSR &= ~((1u << B0_Pin) | (1u << B1_Pin)); /* No rising edge */
 	EXTI->FTSR |= (1u << B0_Pin) | (1u << B1_Pin); /* Falling edge */
 }
