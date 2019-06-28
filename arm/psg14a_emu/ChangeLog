@@ -1,3 +1,8 @@
+2019-06-28  Mykhaylo Shcherbak  <mikl74@yahoo.com>
+
+	* sources/hal/src/gpio_exti.c (Exti_Init): Added enabling interrupt
+	* sources/hal/src/sleep.c (Sleep_on): Debug added
+	* sources/main.c (main): Unstable start fixed
 2019-01-11  Mykhaylo Shcherbak  <mikl74@yahoo.com>
 
 	* sources/hal/include/gpio.h: Removed.

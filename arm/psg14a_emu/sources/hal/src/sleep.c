@@ -2,6 +2,8 @@
 #include "stm32f0xx.h"
 #include "sleep.h"
 
+//extern volatile uint8_t interrupt_occured;
+
 void Sleep_on(void)
 {
 	Gpio_Reset_all_Outs();
@@ -12,5 +14,9 @@ void Sleep_on(void)
 	PWR->CR |= PWR_CR_LPDS; /* Regulator off */
 	__DSB();
 	__WFI();
-
+//	interrupt_occured = 0;
+//	while (interrupt_occured == 0)
+//	{
+//
+//	}
 }

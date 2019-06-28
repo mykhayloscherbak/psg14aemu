@@ -11,6 +11,7 @@
 #include "sleep.h"
 #include "buttons.h"
 #include "stm32f0xx.h"
+#include "led.h"
 
 static volatile uint8_t Systick_CallBack_Occured = 0;
 static void CallBack(void)
@@ -86,14 +87,17 @@ void main(void)
 		}
 		if (STATE_IDLE == Working_State)
 		{
+			Old_State = STATE_IDLE;
 			Sleep_on();
+//			Led_On();
 			Exti_Clear_Pending();
 			uint32_t stateChangeTimer;
 			Buttons_Reset();
 			ResetTimer(&stateChangeTimer);
-			while(Buttons_Get_State() == STATE_IDLE && !IsExpiredTimer(&stateChangeTimer,BUTTON_WAIT_MS + 100))
+			while(Buttons_Get_State() == STATE_IDLE && !IsExpiredTimer(&stateChangeTimer,BUTTON_WAIT_MS + 200))
 			{
 			}
+//			Led_Off();
 		}
 	}
 }
