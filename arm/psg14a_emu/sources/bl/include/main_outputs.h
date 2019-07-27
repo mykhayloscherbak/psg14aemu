@@ -9,7 +9,7 @@
 #ifndef SOURCES_BL_INCLUDE_MAIN_OUTPUTS_H_
 #define SOURCES_BL_INCLUDE_MAIN_OUTPUTS_H_
 
-
+#include <stdint.h>
 typedef enum
 {
 	STATE_IDLE = 0, /** < Idle state. Must not occur in real life. In idle CPU sleeps */

@@ -10,8 +10,8 @@
 #include "main_outputs.h"
 #include "sleep.h"
 #include "buttons.h"
-#include "stm32f0xx.h"
 #include "led.h"
+#include "main_cycle.h"
 
 static volatile uint8_t Systick_CallBack_Occured = 0;
 static void CallBack(void)
@@ -56,48 +56,27 @@ void main(void)
 
 	while(1)
 	{
-		State_t Buttons_State = Buttons_Get_State();
-		static State_t Old_State = STATE_IDLE;
-		static State_t Working_State = STATE_IDLE;
-		if (STATE_IDLE == Working_State)
+		mainCycleRun();
+		if (STATE_IDLE == Get_State())
 		{
-			Working_State = Buttons_State;
+//			Sleep_on();
+////			Led_On();
+//			Exti_Clear_Pending();
+//			uint32_t stateChangeTimer;
+//			Buttons_Reset();
+//			ResetTimer(&stateChangeTimer);
+//			while(Buttons_Get_State() == STATE_IDLE && !IsExpiredTimer(&stateChangeTimer,BUTTON_WAIT_MS + 200))
+//			{
+//			}
+////			Led_Off();
 		}
-		if (Old_State != Working_State)
+		else
 		{
-			Set_State(Working_State);
-			if (Working_State != STATE_IDLE)
+			Systick_CallBack_Occured = 0;
+			while (Systick_CallBack_Occured == 0)
 			{
-				Control_Outs(!0);
-			}
-			Old_State = Working_State;
-		}
-		Blink_Led();
-		if (Working_State != STATE_IDLE)
-		{
-			if (Control_Outs(0) != 0)
-			{
-				Working_State = STATE_IDLE;
-			}
-		}
-		Systick_CallBack_Occured = 0;
-		while (Systick_CallBack_Occured == 0)
-		{
 
-		}
-		if (STATE_IDLE == Working_State)
-		{
-			Old_State = STATE_IDLE;
-			Sleep_on();
-//			Led_On();
-			Exti_Clear_Pending();
-			uint32_t stateChangeTimer;
-			Buttons_Reset();
-			ResetTimer(&stateChangeTimer);
-			while(Buttons_Get_State() == STATE_IDLE && !IsExpiredTimer(&stateChangeTimer,BUTTON_WAIT_MS + 200))
-			{
 			}
-//			Led_Off();
 		}
 	}
 }

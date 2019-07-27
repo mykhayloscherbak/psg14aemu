@@ -1,0 +1,7 @@
+
+#ifndef SOURCES_BL_INCLUDE_MAIN_CYCLE_H_
+#define SOURCES_BL_INCLUDE_MAIN_CYCLE_H_
+
+void mainCycleRun(void);
+
+#endif /* SOURCES_BL_INCLUDE_MAIN_CYCLE_H_ */
