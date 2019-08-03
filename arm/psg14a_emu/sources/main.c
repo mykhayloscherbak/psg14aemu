@@ -19,32 +19,6 @@ static void CallBack(void)
 	Systick_CallBack_Occured = !0;
 }
 
-static void prestart(void)
-{
-	uint32_t prestartTimer;
-	ResetTimer(&prestartTimer);
-
-	while (!IsExpiredTimer(&prestartTimer,5000))
-	{
-		static uint8_t on = 0;
-		uint32_t blinkTimer;
-		ResetTimer(&blinkTimer);
-		if (on == 0)
-		{
-			Gpio_Set_Pin(GPIO_LED);
-		}
-		else
-		{
-			Gpio_Reset_Pin(GPIO_LED);
-		}
-		on = !on;
-		while(!IsExpiredTimer(&blinkTimer,100))
-		{
-
-		}
-	}
-	Gpio_Reset_Pin(GPIO_LED);
-}
 
 void main(void)
 {
@@ -52,23 +26,23 @@ void main(void)
 	Systick_Init(CallBack);
 	Gpio_Init();
 	Buttons_Reset();
-	prestart();
+	mainCyclePreRun();
 
 	while(1)
 	{
 		mainCycleRun();
 		if (STATE_IDLE == Get_State())
 		{
-//			Sleep_on();
-////			Led_On();
-//			Exti_Clear_Pending();
-//			uint32_t stateChangeTimer;
-//			Buttons_Reset();
-//			ResetTimer(&stateChangeTimer);
-//			while(Buttons_Get_State() == STATE_IDLE && !IsExpiredTimer(&stateChangeTimer,BUTTON_WAIT_MS + 200))
-//			{
-//			}
-////			Led_Off();
+			Sleep_on();
+			//Led_On();
+			Exti_Clear_Pending();
+			uint32_t stateChangeTimer;
+			Buttons_Reset();
+			ResetTimer(&stateChangeTimer);
+			while(Buttons_Get_State() == STATE_IDLE && !IsExpiredTimer(&stateChangeTimer,BUTTON_WAIT_MS + 200))
+			{
+			}
+			//Led_Off();
 		}
 		else
 		{

@@ -1,3 +1,15 @@
+2019-08-03  Mykhaylo Shcherbak  <mikl74@yahoo.com>
+
+	* Makefile: 
+	* sources/bl/include/buttons.h: Doxygen comments added 
+	* sources/bl/include/control_tables.h: Doxygen comments added 
+	* sources/bl/include/led_control.h: Doxygen comments added
+	* sources/bl/include/main_cycle.h: Doxygen comments added
+	* sources/bl/include/main_outputs.h: Doxygen comments added
+	* sources/bl/src/led_control.c (Blink_Led): Doxygen comments added
+	* sources/bl/src/main_cycle.c (mainCyclePreRun): moved from main
+	* sources/main.c (prestart): moved
+	(main): 
 2019-06-28  Mykhaylo Shcherbak  <mikl74@yahoo.com>
 
 	* sources/hal/src/gpio_exti.c (Exti_Init): Added enabling interrupt

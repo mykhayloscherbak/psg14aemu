@@ -1,11 +1,11 @@
 /**
  * @file led_control.c
+ * @author Mykhaylo Shcherbak
  * @e mikl74@yahoo.com
  * @date 02-01-2019
  * @version 1.00
  * @brief Contains led blinking functions
  */
-
 
 #include <led_control.h>
 #include <stdint.h>
@@ -13,20 +13,24 @@
 #include "led.h"
 #include "main_outputs.h"
 
+/**
+ * Blink mode config
+ */
 typedef struct
 {
-	uint32_t On;
-	uint32_t Off;
+	uint32_t On; /** mS led must be on */
+	uint32_t Off; /** mS led must be off */
 }Blink_mode_t;
 
+/**
+ * Config for led blinking for both modes
+ */
 static const Blink_mode_t Blink_Timings[]=
 {
 		[STATE_IDLE] = 	{.On = 0,.Off = 0},
 		[STATE_START] = {.On = 150, .Off = 150},
 		[STATE_COLD]  = {.On = 300, .Off = 700}
 };
-
-
 
 void Blink_Led(void)
 {

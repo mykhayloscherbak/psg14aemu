@@ -1,6 +1,10 @@
 /**
  * @file main_cycle.c
- * @brief Contains function that is called in while(1) main cycle
+ * @brief Contains functions that are called in while(1) main cycle and after it
+ * @author Mykhaylo Shcherbak
+ * @e mikl74@yahoo.com
+ * @date 03-08-2019
+ * @version 1.00
  */
 
 #include "main_cycle.h"
@@ -8,14 +12,18 @@
 #include "led.h"
 #include "led_control.h"
 #include "buttons.h"
+#include "clock_and_timers.h"
 
+/**
+ * @brief Main Cycle State Machine states
+ */
 typedef enum
 {
-	MCSM_Idle = 0,
-	MCSM_Cold,
-	MCSM_Start,
-	MCSM_Emergency_Stop_Cold,
-	MCSM_Emergency_Stop_Start
+	MCSM_Idle = 0,           /** Idle state */
+	MCSM_Cold,               /** Cold start - start without priming fuel and spark */
+	MCSM_Start,              /** Main start mode */
+	MCSM_Emergency_Stop_Cold,/** Switch was put in start position while in cold starting mode, stop and go to idle */
+	MCSM_Emergency_Stop_Start/** Switch was put in cold position while in main starting mode, stop and go to idle */
 } MCSM_State_t;
 
 static void gotoIdle(void)
@@ -93,3 +101,32 @@ void mainCycleRun(void)
 		break;
 	}
 }
+
+
+void mainCyclePreRun(void)
+{
+	uint32_t prestartTimer;
+	ResetTimer(&prestartTimer);
+
+	while (!IsExpiredTimer(&prestartTimer,5000))
+	{
+		static uint8_t on = 0;
+		uint32_t blinkTimer;
+		ResetTimer(&blinkTimer);
+		if (on == 0)
+		{
+			Gpio_Set_Pin(GPIO_LED);
+		}
+		else
+		{
+			Gpio_Reset_Pin(GPIO_LED);
+		}
+		on = !on;
+		while(!IsExpiredTimer(&blinkTimer,100))
+		{
+
+		}
+	}
+	Gpio_Reset_Pin(GPIO_LED);
+}
+

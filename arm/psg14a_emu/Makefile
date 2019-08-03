@@ -65,6 +65,7 @@ CFLAGS += -fno-common
 #CFLAGS += -pedantic
 CFLAGS += -Wall
 CFLAGS += -Wextra
+CFLAGS += -Werror
 CFLAGS += -Wmissing-prototypes
 CFLAGS += -Wstrict-prototypes
 CFLAGS += -Wmissing-declarations
