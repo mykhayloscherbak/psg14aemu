@@ -2,8 +2,8 @@
  * @file control_tables.c
  * @e mikl74@yahoo.com
  * @author Mykhaylo Shcherbak
- * @date 05-01-2019
- * @version 1.00
+ * @date 10-08-2019
+ * @version 1.10
  * @brief Contains main control table
  */
 
