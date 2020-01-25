@@ -1,3 +1,8 @@
+2020-01-25  Mykhaylo Shcherbak  <mikl74@yahoo.com>
+
+	* sources/bl/include/control_tables.h: Added ch4(36V) for 36V connection
+	* sources/bl/src/control_tables.c: Added ch4(36V) for 36V connection
+	* sources/bl/src/main_outputs.c: Added ch4(36V) for 36V connection
 2019-08-10  Mykhaylo Shcherbak  <mikl74@yahoo.com>
 
 	* sources/bl/src/control_tables.c: cosmetics

@@ -20,7 +20,7 @@ typedef enum
 	CH_PRIMING_FUEL,/**< Priming fuel em valve */
 	CH_SPARK,       /**< Priming spark control */
 	CH_SHUNT,       /**< STG-3 shunt */
-	CH_OUT4,        /**< Reserved channel 4 that has power output */
+	CH_36V,         /**< Adding 12V battery in series */
 	CH_OUT5,        /**< Reserved channel 5 that does not have power out, it's just OC out */
 	CH_OUT6,        /**< Reserved channel 6 that does not have power out, it's just OC out */
 	CH_OUT7,        /**< Reserved channel 7 that does not have power out, it's just OC out */
