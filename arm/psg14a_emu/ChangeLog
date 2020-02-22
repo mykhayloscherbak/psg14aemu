@@ -1,3 +1,7 @@
+2020-02-22  Mykhaylo Shcherbak  <mikl74@yahoo.com>
+
+	* sources/bl/src/control_tables.c: Priming fuel pulse changed to 5000/300 ms
+
 2020-01-25  Mykhaylo Shcherbak  <mikl74@yahoo.com>
 
 	* sources/bl/include/control_tables.h: Added ch4(36V) for 36V connection
