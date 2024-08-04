@@ -46,6 +46,7 @@ OBJCOPY := arm-none-eabi-objcopy
 SIZE    := arm-none-eabi-size
 MKDIR   := mkdir
 RM      := rm
+DOXYGEN := doxygen
 
 ARCH_OPTS := -mcpu=cortex-m0
 ARCH_OPTS += -mthumb
@@ -173,7 +174,7 @@ LDFLAGS += -Xlinker --defsym=__stack_size__=$(STACK_SIZE)
 LDFLAGS += -Xlinker -Map=$(OUTPUT_LST_DIR)/$(OUTPUT_MAP)
 
 .PHONY : all
-all: $(CLEANUP) create_output_dirs build_deps
+all: $(CLEANUP) create_output_dirs build_deps doc
 	@$(MAKE) --no-print-directory all_with_deps
 
 .PHONY : create_output_dirs
@@ -223,6 +224,10 @@ create_listing: $(OUTPUT_LST_DIR)/$(OUTPUT_LST)
 
 $(OUTPUT_LST_DIR)/$(OUTPUT_LST): $(OUTPUT_EXE_DIR)/$(OUTPUT_ELF)
 	$(OBJDUMP) -h -S $< > $@
+
+.PHONY: doc
+doc: psg14a_emu.doxyfile $(SRCS)
+	$(DOXYGEN) psg14a_emu.doxyfile
 
 .PHONY : print_size
 print_size: $(OUTPUT_LST_DIR)/$(OUTPUT_SIZ)
