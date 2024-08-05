@@ -100,6 +100,9 @@ SRC_SUB_DIRS := $(call get_sub_dirs, $(SRC_DIR))
 # Build full list of source files
 SRCS := $(foreach DIR, $(SRC_DIR) $(SRC_SUB_DIRS), $(wildcard $(DIR)/*.c))
 
+# Build a list of includes for doxygen dependency
+HEADERS := $(foreach DIR, $(SRC_DIR) $(SRC_SUB_DIRS), $(wildcard $(DIR)/*.h))
+
 #Build full list of asm files
 ASMS := $(foreach DIR, $(SRC_DIR) $(SRC_SUB_DIRS), $(wildcard $(DIR)/*.S))
 
@@ -226,7 +229,7 @@ $(OUTPUT_LST_DIR)/$(OUTPUT_LST): $(OUTPUT_EXE_DIR)/$(OUTPUT_ELF)
 	$(OBJDUMP) -h -S $< > $@
 
 .PHONY: doc
-doc: psg14a_emu.doxyfile $(SRCS)
+doc: psg14a_emu.doxyfile $(SRCS) $(HEADERS)
 	$(DOXYGEN) psg14a_emu.doxyfile
 
 .PHONY : print_size
