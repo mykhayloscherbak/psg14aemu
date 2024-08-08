@@ -174,8 +174,12 @@ LDFLAGS += -Xlinker --defsym=__stack_size__=$(STACK_SIZE)
 LDFLAGS += -Xlinker -Map=$(OUTPUT_LST_DIR)/$(OUTPUT_MAP)
 
 .PHONY : all
-all: $(CLEANUP) create_output_dirs build_deps doc
+all: $(CLEANUP) create_output_dirs build_deps
 	@$(MAKE) --no-print-directory all_with_deps
+
+.PHONY : all_with_doc
+all_with_docs: all doc
+
 
 .PHONY : create_output_dirs
 create_output_dirs: $(OUTPUT_DIRS)
