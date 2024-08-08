@@ -1,7 +1,18 @@
 /**
+ * @mainpage
+ * This is a c project for psg14a starter-alternator control panel for GTD350 engine
+ * @section howtobuild How to build
+ * -# You must have in your path:
+ * - arm-none-eabi-gcc version >=9 bin dir in your path.
+ * For example:
+ * /opt/st/stm32cubeclt_1.15.1/GNU-tools-for-STM32/bin/
+ * - make >= 4.2
+ * - doxygen
+ * -# create and output directory
+ * -# make all
  * @file main.c
  * @e mikl74@yahoo.com
- * @brief Main file for psg14a_emu - project for psg14a starter-alternator control panel for GTD350 engine
+ * @brief Main file for psg14a_emu
  */
 #include <stdint.h>
 #include "gpio_exti.h"
