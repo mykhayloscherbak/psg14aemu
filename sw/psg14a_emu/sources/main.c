@@ -17,7 +17,6 @@
  *      - plantuml with environment var PLANTUML_JAR_PATH pointing to the plantuml .jar
  *      - java
  *      .
- *  .
  * -# create and output directory
  * -# @a make @a all if you want to build binaries
  * or
