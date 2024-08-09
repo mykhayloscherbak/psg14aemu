@@ -1,6 +1,6 @@
 /**
  * @file main_outputs.c
- * @e mikl74@yahoo.com
+ * @email mikl74@yahoo.com
  * @date 05-01-2019
  * @version 1.00
  * @brief Contains functions for controlling main outputs

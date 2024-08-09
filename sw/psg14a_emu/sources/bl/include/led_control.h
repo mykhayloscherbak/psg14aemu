@@ -1,6 +1,6 @@
 /**
  * @file led_control.h
- * @e mikl74@yahoo.com
+ * @email mikl74@yahoo.com
  * @date 02-01-2019
  * @version 1.00
  * @brief Contains led blinking function prototypes
