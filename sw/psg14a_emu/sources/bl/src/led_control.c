@@ -1,7 +1,7 @@
 /**
  * @file led_control.c
  * @author Mykhaylo Shcherbak
- * @email mikl74@yahoo.com
+ * @em mikl74@yahoo.com
  * @date 02-01-2019
  * @version 1.00
  * @brief Contains led blinking functions

@@ -26,6 +26,7 @@
  *
  * @enduml
  */
+ /* !!!!!!!! Do not change the names and format of Cyclogram_xxxx arrays as it's used in docs auto generation */
 const Channel_Step_t Cyclogram_Cold[]=
 {
 		{.Channel = CH_STARTER,			.Mode = OUT_MODE_ON,		.ms = 	  0, 	.On = 0,	.Off = 0	},
@@ -87,6 +88,7 @@ const Channel_Step_t Cyclogram_Cold[]=
  *
  * @enduml
  */
+ /* !!!!!!!! Do not change the names and format of Cyclogram_xxxx arrays as it's used in docs auto generation */
 const Channel_Step_t Cyclogram_Start[]=
 {
 		{.Channel = CH_STARTER,			.Mode = OUT_MODE_ON,		.ms = 	  0, 	.On = 0,	.Off = 0	},
