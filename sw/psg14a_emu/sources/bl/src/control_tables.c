@@ -9,6 +9,8 @@
 
 /**
  * @brief Contains a cyclogram for cold start mode
+*/
+/**
  * @startuml
  * binary "STARTER" as ST
  * binary "SHUNT" as SH
@@ -39,7 +41,6 @@ const Channel_Step_t Cyclogram_Cold[]=
 /**
  * @brief Contains a cyclogram for real start mode
  * @startuml
- * scale 1000 as 50 pixels
  * binary "STARTER" as ST
  * binary "SHUNT" as SH
  * binary "PRIMING FUEL" as PF
@@ -85,7 +86,7 @@ const Channel_Step_t Cyclogram_Cold[]=
  * PF is low
  * SP is low
  *
- *
+ * @31000
  * @enduml
  */
  /* !!!!!!!! Do not change the names and format of Cyclogram_xxxx arrays as it's used in docs auto generation */

@@ -13,7 +13,7 @@
  *  /opt/st/stm32cubeclt_1.15.1/GNU-tools-for-STM32/bin/
  *  - make >= 4.2
  *  - if you want to build docs you need:
- *      - doxygen
+ *      - doxygen 1.12.0
  *      - plantuml with environment var PLANTUML_JAR_PATH pointing to the plantuml .jar
  *      - java
  *      .
