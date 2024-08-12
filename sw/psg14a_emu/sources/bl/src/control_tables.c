@@ -12,16 +12,17 @@
 */
 /**
  * @startuml
+ * scale 400 width
  * binary "STARTER" as ST
  * binary "SHUNT" as SH
  * @0
  * ST is high
  * SH is low
  *
- * @5000
+ * @5
  * SH is high
  *
- * @25000
+ * @25
  * ST is low
  * SH is low
  *
@@ -41,6 +42,7 @@ const Channel_Step_t Cyclogram_Cold[]=
 /**
  * @brief Contains a cyclogram for real start mode
  * @startuml
+ * scale 1800*300
  * binary "STARTER" as ST
  * binary "SHUNT" as SH
  * binary "PRIMING FUEL" as PF
@@ -52,41 +54,41 @@ const Channel_Step_t Cyclogram_Cold[]=
  * SH is low
  * V36 is low
  * SP is low
- * @2000
+ * @2
  * PF is high
  * SP is high
  * SH is high
- * @+5000
+ * @+5
  * PF is low
- * @+300
+ * @+0.3
  * PF is high
- * @+5000
+ * @+5
  * PF is low
- * @+300
+ * @+0.3
  * PF is high
- * @+5000
+ * @+5
  * PF is low
- * @+300
+ * @+0.3
  * PF is high
- * @+5000
+ * @+5
  * PF is low
- * @+300
+ * @+0.3
  * PF is high
- * @+5000
+ * @+5
  * PF is low
- * @+300
+ * @+0.300
  * PF is high
- * @10000
+ * @10
  * V36 is high
- * @28000
+ * @28
  * SH is low
  * ST is low
  * V36 is low
- * @30000
+ * @30
  * PF is low
  * SP is low
  *
- * @31000
+ * @31
  * @enduml
  */
  /* !!!!!!!! Do not change the names and format of Cyclogram_xxxx arrays as it's used in docs auto generation */
