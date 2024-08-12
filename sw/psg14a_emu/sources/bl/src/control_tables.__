@@ -8,12 +8,12 @@
 #include "control_tables.h"
 /*[[[cog
 import cog
-cog.outl("// Gen code")
+cog.outl("/* Gen code */")
 with open(cog.inFile) as f:
   for line in f:
-
+    cog.outl("/*"+line+"*/")
 ]]]*/
-// Gen code
+
 /*[[[end]]]*/
 /**
  * @brief Contains a cyclogram for cold start mode
