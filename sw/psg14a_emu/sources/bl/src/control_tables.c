@@ -8,13 +8,15 @@
 #include "control_tables.h"
 /*[[[cog
 import cog
-cog.outl("// Gen code")
 with open(cog.inFile) as f:
   for line in f:
+    split = line.split()
+    if len(split) >= 3 and split[0] == 'const' and split[1] == 'Channel_Step_t' and split[2].startswith('Cyclogram_'):
+      cog.msg(line)
+
 
 ]]]*/
-// Gen code
-/*[[[end]]]*/
+/*[[[end]]] (checksum: d41d8cd98f00b204e9800998ecf8427e)*/
 /**
  * @brief Contains a cyclogram for cold start mode
 */
