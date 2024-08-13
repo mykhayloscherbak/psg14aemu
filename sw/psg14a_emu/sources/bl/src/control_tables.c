@@ -8,12 +8,29 @@
 #include "control_tables.h"
 /*[[[cog
 import cog
-with open(cog.inFile) as f:
-  for line in f:
-    split = line.split()
-    if len(split) >= 3 and split[0] == 'const' and split[1] == 'Channel_Step_t' and split[2].startswith('Cyclogram_'):
-      cog.msg(line)
+def checkCyclogram(split):
+  return len(split) >= 3 and split[0] == 'const' and split[1] == 'Channel_Step_t' and split[2].startswith('Cyclogram_')
 
+def convertToUml(instanceNo):
+  parsed = {}
+  with open(cog.inFile) as f:
+    instance = 0
+    for line in f:
+      split = line.split()
+      if checkCyclogram(split):
+          instance += 1
+      if (instance >= instanceNo + 1):
+        break
+    if instance != instanceNo + 1:
+      cog.error("No Cycloram line found")
+    else:
+      for line in f:
+        if line.find(";") != -1 :
+          break
+        cog.msg(line)
+  f.close()
+
+convertToUml(0)
 
 ]]]*/
 /*[[[end]]] (checksum: d41d8cd98f00b204e9800998ecf8427e)*/
@@ -31,10 +48,14 @@ const Channel_Step_t Cyclogram_Cold[]=
 		{.Channel = CH_TOTAL, .ms = 25100}
 };
 
+/*[[[cog
+convertToUml(1)
+]]]*/
+/*[[[end]]] (checksum: d41d8cd98f00b204e9800998ecf8427e)*/
+
 /**
  * @brief Contains a cyclogram for real start mode
  */
-
  /* !!!!!!!! Do not change the names and format of Cyclogram_xxxx arrays as it's used in docs auto generation */
 const Channel_Step_t Cyclogram_Start[]=
 {
