@@ -8,8 +8,19 @@
 #include "control_tables.h"
 /*[[[cog
 import cog
+import re
 def checkCyclogram(split):
   return len(split) >= 3 and split[0] == 'const' and split[1] == 'Channel_Step_t' and split[2].startswith('Cyclogram_')
+
+def line2dict(line):
+  ret = {}
+  line_split = re.findall("\.[A-z0-9]+ *= *[A-z0-9]+", line)
+  for item in line_split:
+    eq_split=item.split("=")
+    key = eq_split[0][1:].strip()
+    value = eq_split[1].strip()
+    ret[key]=value
+  return ret
 
 def convertToUml(instanceNo):
   parsed = {}
@@ -27,7 +38,8 @@ def convertToUml(instanceNo):
       for line in f:
         if line.find(";") != -1 :
           break
-        cog.msg(line)
+        dict = line2dict(line)
+        cog.msg(str(dict))
   f.close()
 
 convertToUml(0)
