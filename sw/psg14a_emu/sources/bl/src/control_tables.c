@@ -39,7 +39,14 @@ def convertToUml(instanceNo):
         if line.find(";") != -1 :
           break
         dict = line2dict(line)
-        cog.msg(str(dict))
+        if "Channel" in dict.keys():
+          dictkey = dict["Channel"]
+          dict.pop("Channel")
+          if dictkey not in parsed.keys():
+            parsed[dictkey] = []
+          parsed[dictkey].append(dict)
+      cog.msg(str(parsed))
+
   f.close()
 
 convertToUml(0)
