@@ -22,6 +22,14 @@ def line2dict(line):
     ret[key]=value
   return ret
 
+def parsedToUml(parsed):
+ cog.outl("/\x2a*")
+ cog.outl("@startuml")
+
+ cog.outl("@enduml")
+ cog.outl("\x2a/")
+
+
 def convertToUml(instanceNo):
   parsed = {}
   with open(cog.inFile) as f:
@@ -45,14 +53,18 @@ def convertToUml(instanceNo):
           if dictkey not in parsed.keys():
             parsed[dictkey] = []
           parsed[dictkey].append(dict)
-      cog.msg(str(parsed))
+      parsedToUml(parsed)
 
   f.close()
 
 convertToUml(0)
 
 ]]]*/
-/*[[[end]]] (checksum: d41d8cd98f00b204e9800998ecf8427e)*/
+/**
+@startuml
+@enduml
+*/
+/*[[[end]]] (checksum: 6329556c86b6f5dd70ff1af8549d97f8)*/
 /**
  * @brief Contains a cyclogram for cold start mode
 */
@@ -70,7 +82,11 @@ const Channel_Step_t Cyclogram_Cold[]=
 /*[[[cog
 convertToUml(1)
 ]]]*/
-/*[[[end]]] (checksum: d41d8cd98f00b204e9800998ecf8427e)*/
+/**
+@startuml
+@enduml
+*/
+/*[[[end]]] (checksum: 6329556c86b6f5dd70ff1af8549d97f8)*/
 
 /**
  * @brief Contains a cyclogram for real start mode
