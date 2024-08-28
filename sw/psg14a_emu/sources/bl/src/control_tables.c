@@ -32,15 +32,37 @@ def parsedToUml(parsed, name):
   if key != "CH_TOTAL":
     name = key[key.find("CH_") + 3:]
     cog.outl("binary \""+name+"\" as " +key)
+ totalms = int(parsed["CH_TOTAL"][0]["ms"])
  for key in parsed.keys():
   if key != "CH_TOTAL":
     l = parsed[key]
-    for element in l:
+    for n,element in enumerate(l):
       cog.outl("@"+element["ms"])
       if element["Mode"] == "OUT_MODE_ON":
         cog.outl(key + " is high")
       if element["Mode"] == "OUT_MODE_OFF":
         cog.outl(key + " is low")
+      if element["Mode"] == "OUT_MODE_PULSED":
+        start = int(element["ms"])
+        on = int(element["On"])
+        off = int(element["Off"])
+        if n<len(l) - 1: #not the last element
+         to = int(l[n + 1]["ms"])
+        else:
+          to = totalms
+        ts = int(element["ms"])
+        cog.outl(key + " is high")
+        while True:
+          ts += on
+          if ts >= to:
+            break
+          cog.outl("@+" + str(on))
+          cog.outl(key + " is low")
+          ts += off
+          if ts >= to:
+            break
+          cog.outl("@+" + str(off))
+          cog.outl(key + " is high")
 
  cog.outl("@enduml")
  cog.outl("\x2a/")
@@ -116,7 +138,8 @@ convertToUml(1)
 /**
 @startuml
 title Cyclogram_Start
-scale 400 width
+scale 900 width
+scale 500 height
 binary "STARTER" as CH_STARTER
 binary "PRIMING_FUEL" as CH_PRIMING_FUEL
 binary "SPARK" as CH_SPARK
@@ -127,6 +150,27 @@ CH_STARTER is high
 @28000
 CH_STARTER is low
 @2000
+CH_PRIMING_FUEL is high
+@+5000
+CH_PRIMING_FUEL is low
+@+300
+CH_PRIMING_FUEL is high
+@+5000
+CH_PRIMING_FUEL is low
+@+300
+CH_PRIMING_FUEL is high
+@+5000
+CH_PRIMING_FUEL is low
+@+300
+CH_PRIMING_FUEL is high
+@+5000
+CH_PRIMING_FUEL is low
+@+300
+CH_PRIMING_FUEL is high
+@+5000
+CH_PRIMING_FUEL is low
+@+300
+CH_PRIMING_FUEL is high
 @30000
 CH_PRIMING_FUEL is low
 @2000
@@ -143,7 +187,7 @@ CH_36V is high
 CH_36V is low
 @enduml
 */
-/*[[[end]]] (checksum: 7980a7bd36a5cd6208b751b8e818707a)*/
+/*[[[end]]] (checksum: 2408d88e2597d7123211af8da896bc90)*/
 
 /**
  * @brief Contains a cyclogram for real start mode
