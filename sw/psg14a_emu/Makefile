@@ -47,6 +47,7 @@ SIZE    := arm-none-eabi-size
 MKDIR   := mkdir
 RM      := rm
 DOXYGEN := doxygen
+PYTHON	:= python3
 
 ARCH_OPTS := -mcpu=cortex-m0
 ARCH_OPTS += -mthumb
@@ -123,7 +124,8 @@ OUTPUT_OBJ_DIR := $(OUTPUT_DIR)/$(OBJ_DIR)
 OUTPUT_EXE_DIR := $(OUTPUT_DIR)/$(EXE_DIR)
 OUTPUT_LST_DIR := $(OUTPUT_DIR)/$(LST_DIR)
 OUTPUT_OBJ_DIRS := $(patsubst $(SRC_DIR)%, $(OUTPUT_OBJ_DIR)%, $(SRC_DIRS))
-OUTPUT_DIRS := $(sort $(OUTPUT_OBJ_DIRS) $(OUTPUT_EXE_DIR) $(OUTPUT_LST_DIR))
+OUTPUT_DOC_DIRS := $(OUTPUT_DIR)/Doc
+OUTPUT_DIRS := $(sort $(OUTPUT_OBJ_DIRS) $(OUTPUT_EXE_DIR) $(OUTPUT_LST_DIR) $(OUTPUT_DOC_DIRS))
 
 # Targets
 OBJSC := $(strip $(patsubst $(SRC_DIR)/%.c, $(OUTPUT_OBJ_DIR)/%.o, $(SRCS)))
@@ -233,8 +235,12 @@ $(OUTPUT_LST_DIR)/$(OUTPUT_LST): $(OUTPUT_EXE_DIR)/$(OUTPUT_ELF)
 	$(OBJDUMP) -h -S $< > $@
 
 .PHONY: doc
-doc: psg14a_emu.doxyfile $(SRCS) $(HEADERS)
+doc: cog psg14a_emu.doxyfile $(SRCS) $(HEADERS)
 	$(DOXYGEN) psg14a_emu.doxyfile
+
+.PHONY: cog
+cog: sources/bl/src/control_tables.c
+	$(PYTHON) -m cogapp -r -c sources/bl/src/control_tables.c
 
 .PHONY : print_size
 print_size: $(OUTPUT_LST_DIR)/$(OUTPUT_SIZ)

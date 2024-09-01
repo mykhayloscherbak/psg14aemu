@@ -16,6 +16,7 @@
  *      - doxygen 1.12.0
  *      - plantuml with environment var PLANTUML_JAR_PATH pointing to the plantuml .jar
  *      - java
+ *      - python3 with installed cogapp (python -m pip install cogapp)
  *      .
  * -# create and output directory
  * -# @a make @a all if you want to build binaries

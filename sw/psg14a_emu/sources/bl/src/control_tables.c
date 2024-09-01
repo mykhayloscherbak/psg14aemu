@@ -27,7 +27,8 @@ def parsedToUml(parsed, name):
  cog.outl("/\x2a*")
  cog.outl("@startuml")
  cog.outl("title "+name)
- cog.outl("scale 400 width")
+ #cog.outl("scale max 1000*300")
+ cog.outl("scale 30100 as 1000 pixels")
  for key in parsed.keys():
   if key != "CH_TOTAL":
     name = key[key.find("CH_") + 3:]
@@ -104,7 +105,7 @@ convertToUml(0)
 /**
 @startuml
 title Cyclogram_Cold
-scale 400 width
+scale 30100 as 1000 pixels
 binary "STARTER" as CH_STARTER
 binary "SHUNT" as CH_SHUNT
 @0
@@ -117,7 +118,7 @@ CH_SHUNT is high
 CH_SHUNT is low
 @enduml
 */
-/*[[[end]]] (checksum: d86cc43334a1cc1483ddbe764429a126)*/
+/*[[[end]]] (checksum: 66cb44bc61aa353ba8e6e11035a2f605) */
 /**
  * @brief Contains a cyclogram for cold start mode
 */
@@ -138,8 +139,7 @@ convertToUml(1)
 /**
 @startuml
 title Cyclogram_Start
-scale 900 width
-scale 500 height
+scale 30100 as 1000 pixels
 binary "STARTER" as CH_STARTER
 binary "PRIMING_FUEL" as CH_PRIMING_FUEL
 binary "SPARK" as CH_SPARK
@@ -187,7 +187,7 @@ CH_36V is high
 CH_36V is low
 @enduml
 */
-/*[[[end]]] (checksum: 2408d88e2597d7123211af8da896bc90)*/
+/*[[[end]]] (checksum: 9ea6b725968904046eefe495335ab7a4) */
 
 /**
  * @brief Contains a cyclogram for real start mode
