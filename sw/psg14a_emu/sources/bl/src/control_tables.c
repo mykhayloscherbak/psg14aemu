@@ -1,7 +1,7 @@
 /**
  * @file control_tables.c
- * @date 10-08-2019
- * @version 1.10
+ * @date 10-09-2024
+ * @version 2.10
  * @brief Contains main control table
  */
 
@@ -23,12 +23,16 @@ def line2dict(line):
   return ret
 
 
-def parsedToUml(parsed, name):
+def parsedToUml(parsed, name, xscale, yscale):
  cog.outl("/\x2a*")
  cog.outl("@startuml")
  cog.outl("title "+name)
- #cog.outl("scale max 1000*300")
- cog.outl("scale 30100 as 1000 pixels")
+ if xscale is not None and yscale is not None:
+  cog.outl("scale {:d}*{:d}".format(xscale, yscale))
+ elif xscale is not None:
+  cog.outl("scale {:d} width".format(xscale))
+ elif yscale is not None:
+  cog.outl("scale {:d} height".format(yscale))
  for key in parsed.keys():
   if key != "CH_TOTAL":
     name = key[key.find("CH_") + 3:]
@@ -69,7 +73,7 @@ def parsedToUml(parsed, name):
  cog.outl("\x2a/")
 
 
-def convertToUml(instanceNo):
+def convertToUml(instanceNo,xscale = None, yscale = None):
   parsed = {}
   with open(cog.inFile) as f:
     instance = 0
@@ -95,7 +99,7 @@ def convertToUml(instanceNo):
             parsed[dictkey] = []
           parsed[dictkey].append(dict)
       #cog.msg(str(parsed))
-      parsedToUml(parsed, name)
+      parsedToUml(parsed, name, xscale, yscale)
 
   f.close()
 
@@ -105,7 +109,6 @@ convertToUml(0)
 /**
 @startuml
 title Cyclogram_Cold
-scale 30100 as 1000 pixels
 binary "STARTER" as CH_STARTER
 binary "SHUNT" as CH_SHUNT
 @0
@@ -118,7 +121,7 @@ CH_SHUNT is high
 CH_SHUNT is low
 @enduml
 */
-/*[[[end]]] (checksum: 66cb44bc61aa353ba8e6e11035a2f605) */
+/*[[[end]]] (checksum: 528b41bdd7e3118236630c249feda6d0) */
 /**
  * @brief Contains a cyclogram for cold start mode
 */
@@ -134,12 +137,12 @@ const Channel_Step_t Cyclogram_Cold[]=
 };
 
 /*[[[cog
-convertToUml(1)
+convertToUml(1,3000,500)
 ]]]*/
 /**
 @startuml
 title Cyclogram_Start
-scale 30100 as 1000 pixels
+scale 3000*500
 binary "STARTER" as CH_STARTER
 binary "PRIMING_FUEL" as CH_PRIMING_FUEL
 binary "SPARK" as CH_SPARK
@@ -187,7 +190,7 @@ CH_36V is high
 CH_36V is low
 @enduml
 */
-/*[[[end]]] (checksum: 9ea6b725968904046eefe495335ab7a4) */
+/*[[[end]]] (checksum: cfdf8906078d1140567f11a9590a8c6f) */
 
 /**
  * @brief Contains a cyclogram for real start mode
