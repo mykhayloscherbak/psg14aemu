@@ -13,10 +13,13 @@
 #include "main_outputs.h"
 #include "buttons.h"
 
+/**
+ * @brief holds the current switch (button) position (start/coldstart) and the timer how long it it is in the state
+ */
 typedef struct
 {
-	Buttons_t Button;
-	uint32_t Timer;
+	Buttons_t Button; /**< Button or switch position */
+	uint32_t Timer; /**< Timer for state */
 }Button_State_t;
 
 static Button_State_t Button_State = {.Button = BUTTON_NONE, .Timer = 0x0FFFFFFF};
