@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "psg14_emu-rescue")(type "KiCad")(uri "${KIPRJMOD}/psg14_emu-rescue.kicad_sym")(options "")(descr ""))
+)
