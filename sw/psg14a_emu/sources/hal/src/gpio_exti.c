@@ -21,11 +21,14 @@ typedef enum
 	GPIO_MODE_OUT    /** < Channel or LED */
 } Gpio_Mode_t;
 
+/**
+ * @brief GPIO pin description
+ */
 typedef struct
 {
-	GPIO_TypeDef * port;
-	uint8_t	Pin;
-	Gpio_Mode_t Mode;
+	GPIO_TypeDef * port; /**< Gpio port structure ptr. ex GPIOA, GPIOB */
+	uint8_t	Pin; /**< Pin number */
+	Gpio_Mode_t Mode; /**< Init mode */
 } Gpio_Hal_t;
 
 static const uint8_t B0_Pin = 9;

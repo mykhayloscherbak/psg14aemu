@@ -1,3 +1,7 @@
+## @file cycle2uml.py
+# @brief Optional file needed to build doxygen with UML
+#
+
 ## @package cycle2uml
 # This module converts .c cyclogram format to uml diagrams using COG
 #
