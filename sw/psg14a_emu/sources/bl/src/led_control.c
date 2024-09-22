@@ -14,7 +14,7 @@
 #include "main_outputs.h"
 
 /**
- * Blink mode config
+ * @brief Blink mode config
  */
 typedef struct
 {
@@ -22,9 +22,6 @@ typedef struct
 	uint32_t Off; /** mS led must be off */
 }Blink_mode_t;
 
-/**
- * Config for led blinking for both modes
- */
 static const Blink_mode_t Blink_Timings[]=
 {
 		[STATE_IDLE] = 	{.On = 0,.Off = 0},
@@ -32,6 +29,10 @@ static const Blink_mode_t Blink_Timings[]=
 		[STATE_COLD]  = {.On = 300, .Off = 700}
 };
 
+/**
+ * @brief Pass-through function for led blinking
+ * Blinking is done according to the selected mode using the @ref Blink_mode_t table element
+ */
 void Blink_Led(void)
 {
 	const State_t CurrState = Get_State();
