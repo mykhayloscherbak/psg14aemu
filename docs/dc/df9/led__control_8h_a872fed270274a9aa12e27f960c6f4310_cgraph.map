@@ -1,0 +1,9 @@
+<map id="Blink_Led" name="Blink_Led">
+<area shape="rect" id="Node000001" title="Pass&#45;through function for led blinking Blinking is done according to the selected mode using the Blin..." alt="" coords="5,55,91,80"/>
+<area shape="rect" id="Node000002" href="$de/d3c/main__outputs_8c.html#a812635e7cb53ee129e91f95de7cd4c14" title=" " alt="" coords="155,5,241,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,52,145,33,146,38,88,57"/>
+<area shape="rect" id="Node000003" href="$db/de5/clock__and__timers_8c.html#a8a4e699fbe055adaac0e209980ed3288" title="Checks if timer timeout has expired." alt="" coords="139,55,257,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="91,65,125,65,125,70,91,70"/>
+<area shape="rect" id="Node000004" href="$db/de5/clock__and__timers_8c.html#aa9cb67dffbf08af7059377c84e10d7e4" title="Resets software timer." alt="" coords="150,104,246,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="88,78,146,97,145,102,86,83"/>
+</map>

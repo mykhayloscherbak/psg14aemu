@@ -1,0 +1,9 @@
+<map id="led.h" name="led.h">
+<area shape="rect" id="Node000001" title="contains functions to turn LED on and off" alt="" coords="141,5,196,31"/>
+<area shape="rect" id="Node000002" href="$d6/dcc/led__control_8c.html" title="Contains led blinking functions." alt="" coords="5,79,111,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,40,78,81,75,76,138,36"/>
+<area shape="rect" id="Node000003" href="$d0/d29/main_8c.html" title="Main file for psg14a_emu." alt="" coords="135,79,202,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="171,44,171,79,166,79,166,44"/>
+<area shape="rect" id="Node000004" href="$d4/de7/main__cycle_8c.html" title="Contains functions that are called in while(1) main cycle and after it." alt="" coords="226,79,333,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="199,36,263,76,260,81,197,40"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="buttons.h" name="buttons.h">
+<area shape="rect" id="Node000001" title="Contains functions prototypes to check the button state in non&#45;blocking mode." alt="" coords="104,5,187,31"/>
+<area shape="rect" id="Node000002" href="$d4/dfb/buttons_8c.html" title="Contains functions to check the button state in non&#45;blocking mode." alt="" coords="5,79,88,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,41,64,81,61,76,117,36"/>
+<area shape="rect" id="Node000003" href="$d0/d29/main_8c.html" title="Main file for psg14a_emu." alt="" coords="112,79,179,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="148,44,148,79,143,79,143,44"/>
+<area shape="rect" id="Node000004" href="$d4/de7/main__cycle_8c.html" title="Contains functions that are called in while(1) main cycle and after it." alt="" coords="203,79,309,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="176,36,239,76,236,81,173,40"/>
+</map>

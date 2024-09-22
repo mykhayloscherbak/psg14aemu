@@ -1,0 +1,27 @@
+<map id="mainCycleRun" name="mainCycleRun">
+<area shape="rect" id="Node000001" title="This function is called in while(1). Waiting for the end of the tick is done after it." alt="" coords="5,105,121,131"/>
+<area shape="rect" id="Node000002" href="$d6/dcc/led__control_8c.html#a872fed270274a9aa12e27f960c6f4310" title="Pass&#45;through function for led blinking Blinking is done according to the selected mode using the Blin..." alt="" coords="198,80,283,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,107,184,98,185,103,122,112"/>
+<area shape="rect" id="Node000006" href="$d4/dfb/buttons_8c.html#a9a427615b5b0180063d3cd746028d630" title=" " alt="" coords="169,31,312,56"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="88,103,168,65,186,58,188,63,170,70,90,108"/>
+<area shape="rect" id="Node000007" href="$de/d3c/main__outputs_8c.html#ae519b4ef0866735b739fb95362a031f9" title="Controls outputs for the current time." alt="" coords="187,129,294,155"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="122,123,174,130,173,136,121,128"/>
+<area shape="rect" id="Node000011" href="$de/d3c/main__outputs_8c.html#a504328a660a224b76949cb1c90b80e78" title=" " alt="" coords="199,179,283,204"/>
+<area shape="poly" id="edge14_Node000001_Node000011" title=" " alt="" coords="92,128,170,164,190,171,189,176,168,168,90,133"/>
+<area shape="rect" id="Node000003" href="$de/d3c/main__outputs_8c.html#a812635e7cb53ee129e91f95de7cd4c14" title=" " alt="" coords="378,104,465,129"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="284,96,365,107,364,112,283,101"/>
+<area shape="rect" id="Node000004" href="$db/de5/clock__and__timers_8c.html#a8a4e699fbe055adaac0e209980ed3288" title="Checks if timer timeout has expired." alt="" coords="362,5,481,31"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="279,77,311,65,359,40,372,34,374,39,361,44,313,70,281,82"/>
+<area shape="rect" id="Node000005" href="$db/de5/clock__and__timers_8c.html#aa9cb67dffbf08af7059377c84e10d7e4" title="Resets software timer." alt="" coords="373,55,469,80"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="283,84,359,73,360,79,284,89"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="312,31,348,26,348,31,313,36"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="313,50,360,57,359,62,312,55"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="294,132,364,122,364,127,295,137"/>
+<area shape="poly" id="edge13_Node000007_Node000005" title=" " alt="" coords="279,127,311,114,359,89,372,83,374,88,361,94,313,119,281,132"/>
+<area shape="rect" id="Node000008" href="$d2/da8/gpio__exti_8c.html#a2eaab98c926e448a6e93701b03612772" title=" " alt="" coords="360,153,483,179"/>
+<area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="295,146,346,153,346,159,294,152"/>
+<area shape="rect" id="Node000009" href="$d2/da8/gpio__exti_8c.html#a0975a2cf0136c0695f87e6260079ff83" title=" " alt="" coords="368,203,475,228"/>
+<area shape="poly" id="edge11_Node000007_Node000009" title=" " alt="" coords="283,152,313,164,361,188,377,195,375,200,359,192,311,168,281,157"/>
+<area shape="rect" id="Node000010" href="$db/de5/clock__and__timers_8c.html#a0916a7747db1d64daf21e3862c550fb0" title=" " alt="" coords="375,252,467,277"/>
+<area shape="poly" id="edge12_Node000007_Node000010" title=" " alt="" coords="294,152,314,164,331,183,339,202,346,220,362,239,368,243,365,247,358,243,342,223,334,204,326,186,310,168,291,157"/>
+</map>

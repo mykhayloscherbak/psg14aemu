@@ -1,0 +1,16 @@
+<map id="buttons.c" name="buttons.c">
+<area shape="rect" id="Node000001" title="Contains functions to check the button state in non&#45;blocking mode." alt="" coords="173,5,256,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="135,225,206,251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,21,135,24,92,33,51,51,33,64,18,80,9,100,11,120,21,139,38,158,84,192,132,217,130,222,81,196,34,162,16,142,5,121,4,99,14,77,30,60,48,47,90,28,134,19,173,16"/>
+<area shape="rect" id="Node000003" href="$d1/daf/clock__and__timers_8h.html" title="Contains clocks and timer functions prototypes." alt="" coords="29,79,177,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="198,33,134,73,132,69,195,28"/>
+<area shape="rect" id="Node000004" href="$d7/dae/gpio__exti_8h.html" title="Contains GPIO and EXTI hardware abstraction layer prototypes." alt="" coords="123,152,218,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="214,32,181,140,176,138,209,30"/>
+<area shape="rect" id="Node000005" href="$d8/de2/main__outputs_8h.html" title="Contains functions prototypes for controlling main outputs." alt="" coords="243,152,365,177"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="224,30,292,139,288,142,220,33"/>
+<area shape="rect" id="Node000006" href="$de/d05/buttons_8h.html" title="Contains functions prototypes to check the button state in non&#45;blocking mode." alt="" coords="303,79,385,104"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="237,28,312,69,309,74,234,33"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="173,178,173,212,168,212,168,178"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="284,180,206,221,203,216,281,175"/>
+<area shape="poly" id="edge8_Node000006_Node000005" title=" " alt="" coords="340,106,320,141,315,139,335,103"/>
+</map>

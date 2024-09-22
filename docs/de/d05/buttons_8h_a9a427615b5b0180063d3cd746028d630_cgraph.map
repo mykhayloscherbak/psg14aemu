@@ -1,0 +1,7 @@
+<map id="Buttons_Get_State" name="Buttons_Get_State">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,148,56"/>
+<area shape="rect" id="Node000002" href="$db/de5/clock__and__timers_8c.html#a8a4e699fbe055adaac0e209980ed3288" title="Checks if timer timeout has expired." alt="" coords="196,5,315,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,31,182,26,182,31,148,36"/>
+<area shape="rect" id="Node000003" href="$db/de5/clock__and__timers_8c.html#aa9cb67dffbf08af7059377c84e10d7e4" title="Resets software timer." alt="" coords="207,55,303,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="148,50,194,56,193,62,148,56"/>
+</map>

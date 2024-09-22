@@ -1,0 +1,9 @@
+<map id="cycle2uml.convert_to_uml" name="cycle2uml.convert_to_uml">
+<area shape="rect" id="Node000001" title="The main function." alt="" coords="5,55,200,80"/>
+<area shape="rect" id="Node000002" href="$d4/d98/namespacecycle2uml.html#ab557f3dc8b2a3f0c41db41c37cc797d9" title="Checks if the split line is a first cyclogram line." alt="" coords="248,5,455,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,52,273,31,274,36,168,57"/>
+<area shape="rect" id="Node000003" href="$d4/d98/namespacecycle2uml.html#acd83b980d658bd59ff76240096c9342f" title="Converts a cyclogram line to a dictionary line format is a designated initializers format of c struct..." alt="" coords="277,55,426,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="200,65,263,65,263,70,200,70"/>
+<area shape="rect" id="Node000004" href="$d4/d98/namespacecycle2uml.html#ab1ad61e7730afa57de545f032ff5bb88" title="Converts the parsed structure to a UML." alt="" coords="257,104,446,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="168,77,274,99,273,104,167,83"/>
+</map>

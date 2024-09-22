@@ -1,0 +1,11 @@
+<map id="clock_and_timers.c" name="clock_and_timers.c">
+<area shape="rect" id="Node000001" title="Contains functions for clock system Project uses HSI without PLL. Clock is ~8Mhz for core and buses." alt="" coords="121,5,267,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,76,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,33,79,75,77,70,168,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="101,79,175,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="187,33,158,69,153,66,183,29"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="199,79,303,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="206,29,235,66,231,70,201,33"/>
+<area shape="rect" id="Node000005" href="$d1/daf/clock__and__timers_8h.html" title="Contains clocks and timer functions prototypes." alt="" coords="328,79,476,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="228,28,356,72,354,77,227,33"/>
+</map>

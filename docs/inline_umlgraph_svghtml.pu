@@ -1,0 +1,124 @@
+@startuml inline_umlgraph_1.svg
+title Cyclogram_Cold
+binary "STARTER" as CH_STARTER
+binary "SHUNT" as CH_SHUNT
+@0
+CH_STARTER is high
+@25000
+CH_STARTER is low
+@5000
+CH_SHUNT is high
+@25000
+CH_SHUNT is low
+@enduml
+@startuml inline_umlgraph_2.svg
+title Cyclogram_Start
+scale 3000*500
+binary "STARTER" as CH_STARTER
+binary "PRIMING_FUEL" as CH_PRIMING_FUEL
+binary "SPARK" as CH_SPARK
+binary "SHUNT" as CH_SHUNT
+binary "36V" as CH_36V
+@0
+CH_STARTER is high
+@28000
+CH_STARTER is low
+@2000
+CH_PRIMING_FUEL is high
+@+5000
+CH_PRIMING_FUEL is low
+@+300
+CH_PRIMING_FUEL is high
+@+5000
+CH_PRIMING_FUEL is low
+@+300
+CH_PRIMING_FUEL is high
+@+5000
+CH_PRIMING_FUEL is low
+@+300
+CH_PRIMING_FUEL is high
+@+5000
+CH_PRIMING_FUEL is low
+@+300
+CH_PRIMING_FUEL is high
+@+5000
+CH_PRIMING_FUEL is low
+@+300
+CH_PRIMING_FUEL is high
+@30000
+CH_PRIMING_FUEL is low
+@2000
+CH_SPARK is high
+@30000
+CH_SPARK is low
+@2000
+CH_SHUNT is high
+@28000
+CH_SHUNT is low
+@10000
+CH_36V is high
+@28000
+CH_36V is low
+@enduml
+@startuml inline_umlgraph_3.svg
+title Cyclogram_Cold
+binary "STARTER" as CH_STARTER
+binary "SHUNT" as CH_SHUNT
+@0
+CH_STARTER is high
+@25000
+CH_STARTER is low
+@5000
+CH_SHUNT is high
+@25000
+CH_SHUNT is low
+@enduml
+@startuml inline_umlgraph_4.svg
+title Cyclogram_Start
+scale 3000*500
+binary "STARTER" as CH_STARTER
+binary "PRIMING_FUEL" as CH_PRIMING_FUEL
+binary "SPARK" as CH_SPARK
+binary "SHUNT" as CH_SHUNT
+binary "36V" as CH_36V
+@0
+CH_STARTER is high
+@28000
+CH_STARTER is low
+@2000
+CH_PRIMING_FUEL is high
+@+5000
+CH_PRIMING_FUEL is low
+@+300
+CH_PRIMING_FUEL is high
+@+5000
+CH_PRIMING_FUEL is low
+@+300
+CH_PRIMING_FUEL is high
+@+5000
+CH_PRIMING_FUEL is low
+@+300
+CH_PRIMING_FUEL is high
+@+5000
+CH_PRIMING_FUEL is low
+@+300
+CH_PRIMING_FUEL is high
+@+5000
+CH_PRIMING_FUEL is low
+@+300
+CH_PRIMING_FUEL is high
+@30000
+CH_PRIMING_FUEL is low
+@2000
+CH_SPARK is high
+@30000
+CH_SPARK is low
+@2000
+CH_SHUNT is high
+@28000
+CH_SHUNT is low
+@10000
+CH_36V is high
+@28000
+CH_36V is low
+@enduml

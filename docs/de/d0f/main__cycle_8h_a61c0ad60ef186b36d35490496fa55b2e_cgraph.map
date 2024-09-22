@@ -1,0 +1,11 @@
+<map id="mainCyclePreRun" name="mainCyclePreRun">
+<area shape="rect" id="Node000001" title="This function is called before main cycle and makes 5s pause to connect debugger if needed." alt="" coords="5,80,143,105"/>
+<area shape="rect" id="Node000002" href="$d2/da8/gpio__exti_8c.html#a2eaab98c926e448a6e93701b03612772" title=" " alt="" coords="191,5,313,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,77,190,40,205,33,207,38,192,44,105,82"/>
+<area shape="rect" id="Node000003" href="$d2/da8/gpio__exti_8c.html#a0975a2cf0136c0695f87e6260079ff83" title=" " alt="" coords="199,55,305,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="143,80,185,74,185,79,144,86"/>
+<area shape="rect" id="Node000004" href="$db/de5/clock__and__timers_8c.html#a8a4e699fbe055adaac0e209980ed3288" title="Checks if timer timeout has expired." alt="" coords="193,104,311,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="143,99,179,104,178,109,143,105"/>
+<area shape="rect" id="Node000005" href="$db/de5/clock__and__timers_8c.html#aa9cb67dffbf08af7059377c84e10d7e4" title="Resets software timer." alt="" coords="204,153,300,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="107,103,209,145,206,150,105,108"/>
+</map>

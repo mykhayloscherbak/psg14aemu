@@ -1,0 +1,7 @@
+<map id="main_cycle.h" name="main_cycle.h">
+<area shape="rect" id="Node000001" title="Contains prototypes of functions that are called in while(1) main cycle and after it." alt="" coords="39,5,147,31"/>
+<area shape="rect" id="Node000002" href="$d0/d29/main_8c.html" title="Main file for psg14a_emu." alt="" coords="5,79,72,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,43,50,80,45,77,74,40"/>
+<area shape="rect" id="Node000003" href="$d4/de7/main__cycle_8c.html" title="Contains functions that are called in while(1) main cycle and after it." alt="" coords="96,79,203,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="113,40,142,77,138,80,109,43"/>
+</map>

@@ -1,0 +1,18 @@
+<map id="main_outputs.c" name="main_outputs.c">
+<area shape="rect" id="Node000001" title="Contains functions for controlling main outputs." alt="" coords="205,5,327,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,76,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="231,33,90,77,88,72,229,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="231,152,301,177"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="218,33,184,45,155,61,144,70,138,80,137,91,142,103,157,120,175,134,218,151,216,156,173,138,153,124,137,105,132,91,133,78,140,67,152,57,182,40,217,28"/>
+<area shape="rect" id="Node000004" href="$d7/dae/gpio__exti_8h.html" title="Contains GPIO and EXTI hardware abstraction layer prototypes." alt="" coords="152,79,247,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="257,33,221,70,218,67,253,29"/>
+<area shape="rect" id="Node000005" href="$d8/de2/main__outputs_8h.html" title="Contains functions prototypes for controlling main outputs." alt="" coords="271,79,394,104"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="279,29,314,67,311,70,275,33"/>
+<area shape="rect" id="Node000006" href="$d1/d49/control__tables_8h.html" title="Contains prototypes and types for main outputs control table." alt="" coords="419,79,545,104"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="302,28,435,72,433,77,300,33"/>
+<area shape="rect" id="Node000007" href="$d1/daf/clock__and__timers_8h.html" title="Contains clocks and timer functions prototypes." alt="" coords="569,79,717,104"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="327,28,569,73,568,79,326,33"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="212,103,248,140,244,144,208,106"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="324,106,288,144,284,140,320,103"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="448,107,315,150,313,145,446,101"/>
+</map>

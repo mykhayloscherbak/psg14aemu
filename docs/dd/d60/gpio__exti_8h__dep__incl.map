@@ -1,0 +1,20 @@
+<map id="gpio_exti.h" name="gpio_exti.h">
+<area shape="rect" id="Node000001" title="Contains GPIO and EXTI hardware abstraction layer prototypes." alt="" coords="242,5,337,31"/>
+<area shape="rect" id="Node000002" href="$d4/dfb/buttons_8c.html" title="Contains functions to check the button state in non&#45;blocking mode." alt="" coords="5,79,88,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="238,37,87,81,85,76,237,32"/>
+<area shape="rect" id="Node000003" href="$d2/da8/gpio__exti_8c.html" title="Contains GPIO and EXTI HAL functions." alt="" coords="112,79,205,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="257,40,181,81,179,76,255,35"/>
+<area shape="rect" id="Node000004" href="$db/da0/led_8h.html" title="contains functions to turn LED on and off" alt="" coords="230,79,285,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="281,44,265,80,260,77,276,42"/>
+<area shape="rect" id="Node000006" href="$d0/d29/main_8c.html" title="Main file for psg14a_emu." alt="" coords="312,152,379,177"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="301,43,343,151,338,153,296,45"/>
+<area shape="rect" id="Node000008" href="$de/d3c/main__outputs_8c.html" title="Contains functions for controlling main outputs." alt="" coords="360,79,483,104"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="324,35,401,76,398,81,321,39"/>
+<area shape="rect" id="Node000009" href="$d9/dbd/sleep_8c.html" title=" " alt="" coords="507,79,575,104"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="344,32,508,78,506,83,342,37"/>
+<area shape="rect" id="Node000005" href="$d6/dcc/led__control_8c.html" title="Contains led blinking functions." alt="" coords="51,152,157,177"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="222,112,130,154,128,149,219,107"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="284,110,333,150,329,154,280,115"/>
+<area shape="rect" id="Node000007" href="$d4/de7/main__cycle_8c.html" title="Contains functions that are called in while(1) main cycle and after it." alt="" coords="181,152,288,177"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="252,118,241,153,236,151,247,117"/>
+</map>

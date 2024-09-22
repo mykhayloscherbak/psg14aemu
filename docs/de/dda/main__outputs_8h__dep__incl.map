@@ -1,0 +1,18 @@
+<map id="main_outputs.h" name="main_outputs.h">
+<area shape="rect" id="Node000001" title="Contains functions prototypes for controlling main outputs." alt="" coords="168,5,291,31"/>
+<area shape="rect" id="Node000002" href="$d4/dfb/buttons_8c.html" title="Contains functions to check the button state in non&#45;blocking mode." alt="" coords="5,152,88,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,35,112,53,92,65,74,80,62,98,55,117,50,152,44,151,50,116,58,95,70,77,88,61,109,48,154,30"/>
+<area shape="rect" id="Node000003" href="$de/d05/buttons_8h.html" title="Contains functions prototypes to check the button state in non&#45;blocking mode." alt="" coords="84,79,167,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="203,41,144,81,141,76,200,36"/>
+<area shape="rect" id="Node000004" href="$d0/d29/main_8c.html" title="Main file for psg14a_emu." alt="" coords="112,152,179,177"/>
+<area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="218,44,154,153,150,150,213,42"/>
+<area shape="rect" id="Node000005" href="$d4/de7/main__cycle_8c.html" title="Contains functions that are called in while(1) main cycle and after it." alt="" coords="203,152,309,177"/>
+<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="237,44,256,151,251,152,231,45"/>
+<area shape="rect" id="Node000006" href="$d6/dcc/led__control_8c.html" title="Contains led blinking functions." alt="" coords="293,79,398,104"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="261,35,328,76,325,81,258,40"/>
+<area shape="rect" id="Node000007" href="$de/d3c/main__outputs_8c.html" title="Contains functions for controlling main outputs." alt="" coords="423,79,545,104"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="284,32,443,76,442,81,283,37"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="104,115,61,154,58,150,101,111"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="135,117,145,151,140,153,130,118"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="160,108,236,149,233,154,157,113"/>
+</map>
