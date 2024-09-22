@@ -34,9 +34,6 @@ typedef struct
 static const uint8_t B0_Pin = 9;
 static const uint8_t B1_Pin = 10;
 
-//volatile uint8_t interrupt_occured = 0;
-
-
 static const Gpio_Hal_t Gpios[GPIO_TOTAL]=
 {
 		[GPIO_CH0] = 			{.port = GPIOA,.Pin = 0	,	.Mode = GPIO_MODE_OUT},
@@ -64,14 +61,12 @@ void EXTI4_15_IRQHandler(void)
 	{
 		EXTI->PR = (1u << B1_Pin);
 	}
-//	interrupt_occured = 1;
 }
 
 static void Exti_Init(void)
 {
 	/* PA9 and PA10 are exti events for starting sequence. We need event + interrupt */
     EXTI->IMR |= (1u << B0_Pin) | (1u << B1_Pin); /* Interrupt mask RM 11.3 */
-//	EXTI->EMR |= (1u << B0_Pin) | (1u << B1_Pin); /* Event mask RM 11.3 */
 	EXTI->RTSR &= ~((1u << B0_Pin) | (1u << B1_Pin)); /* No rising edge */
 	EXTI->FTSR |= (1u << B0_Pin) | (1u << B1_Pin); /* Falling edge */
 	NVIC_EnableIRQ(EXTI4_15_IRQn);
